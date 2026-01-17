@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Michael's Trattoria - Fine Italian cuisine featuring handcrafted pasta, premium steaks, and fresh seafood in an elegant dining atmosphere.">
+    <title>Michael's Trattoria | Fine Italian Dining</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Schema.org markup for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Michael's Trattoria",
+        "image": "michaels-restaurant-interior-dining-bar-area.webp",
+        "servesCuisine": "Italian",
+        "priceRange": "$$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "123 Main Street",
+            "addressLocality": "Your City",
+            "addressRegion": "State",
+            "postalCode": "12345"
+        },
+        "telephone": "(555) 123-4567",
+        "openingHours": ["Tu-Th 17:00-21:00", "Fr-Sa 17:00-22:00", "Su 16:00-20:00"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Michael's</span>
+                <span class="logo-subtext">Trattoria</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#events" class="nav-link">Private Events</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="#contact" class="btn btn-primary nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="michaels-restaurant-interior-dining-bar-area.webp" alt="Michael's Trattoria elegant dining room with bar" loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Come and Experience</h1>
+            <p class="hero-subtitle">Fine Italian Cuisine in an Unforgettable Setting</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content fade-in">
+                    <span class="section-label">Our Story</span>
+                    <h2 class="section-title">A Tradition of Excellence</h2>
+                    <div class="gold-divider"></div>
+                    <p>For over two decades, Michael's Trattoria has been a cornerstone of fine Italian dining. Our commitment to authentic recipes, premium ingredients, and impeccable service creates an experience that transcends the ordinary.</p>
+                    <p>Every dish tells a story of tradition passed down through generations, reimagined with modern elegance. From our handcrafted pastas to our carefully selected wines, we invite you to savor the essence of Italy.</p>
+                    <a href="#menu" class="btn btn-outline">Explore Our Menu</a>
+                </div>
+                <div class="about-image fade-in">
+                    <img src="michaels-restaurant-dining-room-window-view.webp" alt="Michael's Trattoria dining room with scenic window view" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu Section -->
+    <section class="featured-menu" id="menu">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Culinary Excellence</span>
+                <h2 class="section-title script">Signature Dishes</h2>
+                <div class="gold-divider centered"></div>
+                <p class="section-description">Discover our chef's carefully crafted selections, featuring the finest ingredients and authentic Italian flavors.</p>
+            </div>
+
+            <div class="menu-grid">
+                <article class="menu-card fade-in">
+                    <div class="menu-card-image">
+                        <img src="filet-mignon-mushroom-gravy-mashed-potatoes.webp" alt="Filet Mignon with mushroom gravy and mashed potatoes" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Filet Mignon</h3>
+                        <p>Prime cut tenderloin with wild mushroom demi-glace, whipped potatoes, and seasonal vegetables</p>
+                    </div>
+                </article>
+
+                <article class="menu-card fade-in">
+                    <div class="menu-card-image">
+                        <img src="chicken-marsala-penne-mushroom-sauce.webp" alt="Chicken Marsala with penne pasta in mushroom sauce" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Chicken Marsala</h3>
+                        <p>Pan-seared chicken breast with cremini mushrooms, Marsala wine reduction, served over penne</p>
+                    </div>
+                </article>
+
+                <article class="menu-card fade-in">
+                    <div class="menu-card-image">
+                        <img src="seared-scallops-angel-hair-pasta-spinach.webp" alt="Seared scallops with angel hair pasta and spinach" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Seared Scallops</h3>
+                        <p>Day boat scallops over angel hair pasta with baby spinach, garlic, and white wine butter sauce</p>
+                    </div>
+                </article>
+
+                <article class="menu-card fade-in">
+                    <div class="menu-card-image">
+                        <img src="homemade-lasagna-melted-cheese.webp" alt="Homemade lasagna with melted cheese" loading="lazy">
+                    </div>
+                    <div class="menu-card-content">
+                        <h3>Homemade Lasagna</h3>
+                        <p>Layers of fresh pasta, slow-cooked Bolognese, ricotta, and melted mozzarella</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="section-cta fade-in">
+                <a href="dinner-menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="section-label">Visual Journey</span>
+                <h2 class="section-title script">Gallery</h2>
+                <div class="gold-divider centered"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in" data-src="michaels-restaurant-bar-brick-wall-interior.webp">
+                    <img src="michaels-restaurant-bar-brick-wall-interior.webp" alt="Michael's restaurant bar with exposed brick wall" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="seafood-linguine-shrimp-mussels-clams.webp">
+                    <img src="seafood-linguine-shrimp-mussels-clams.webp" alt="Seafood linguine with shrimp, mussels, and clams" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="michaels-restaurant-dining-corner-vintage-artwork.webp">
+                    <img src="michaels-restaurant-dining-corner-vintage-artwork.webp" alt="Dining corner with vintage Italian artwork" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="glazed-pork-tenderloin-asparagus-potatoes.webp">
+                    <img src="glazed-pork-tenderloin-asparagus-potatoes.webp" alt="Glazed pork tenderloin with asparagus and potatoes" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="martinis.webp">
+                    <img src="martinis.webp" alt="Craft cocktail martinis" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="berry-pavlova-dessert-whipped-cream-wine.webp">
+                    <img src="berry-pavlova-dessert-whipped-cream-wine.webp" alt="Berry pavlova dessert with whipped cream" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="photo_bruchetta.webp">
+                    <img src="photo_bruchetta.webp" alt="Fresh bruschetta appetizer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item fade-in" data-src="penne-alla-vodka.webp">
+                    <img src="penne-alla-vodka.webp" alt="Penne alla vodka pasta" loading="lazy">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">+</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+        <button class="lightbox-close" aria-label="Close gallery">&times;</button>
+        <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+    </div>
+
+    <!-- Private Events Section -->
+    <section class="events" id="events">
+        <div class="events-background">
+            <img src="michaels-restaurant-private-dining-room.webp" alt="Michael's private dining room for special events" loading="lazy">
+            <div class="events-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="events-content fade-in">
+                <span class="section-label">Exclusive Experiences</span>
+                <h2 class="section-title script">Private Events</h2>
+                <div class="gold-divider"></div>
+                <p>Host your special occasions in our elegant private dining room. From intimate celebrations to corporate gatherings, our dedicated team ensures every detail is perfect.</p>
+                <ul class="events-features">
+                    <li>Accommodates up to 40 guests</li>
+                    <li>Customized menus available</li>
+                    <li>Full audio-visual capabilities</li>
+                    <li>Dedicated event coordinator</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Inquire About Private Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-in">
+                    <span class="section-label">Visit Us</span>
+                    <h2 class="section-title">Location & Hours</h2>
+                    <div class="gold-divider"></div>
+
+                    <div class="info-block">
+                        <h3>Address</h3>
+                        <address>
+                            123 Main Street<br>
+                            Your City, State 12345
+                        </address>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Hours</h3>
+                        <ul class="hours-list">
+                            <li><span>Tuesday - Thursday</span><span>5:00 PM - 9:00 PM</span></li>
+                            <li><span>Friday - Saturday</span><span>5:00 PM - 10:00 PM</span></li>
+                            <li><span>Sunday</span><span>4:00 PM - 8:00 PM</span></li>
+                            <li><span>Monday</span><span>Closed</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="info-block">
+                        <h3>Contact</h3>
+                        <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+                        <p>Email: <a href="mailto:info@michaelstrattoria.com">info@michaelstrattoria.com</a></p>
+                    </div>
+                </div>
+
+                <div class="contact-map fade-in">
+                    <div class="map-placeholder">
+                        <img src="michaels-restaurant-dining-room-window-view.webp" alt="Michael's Trattoria location" loading="lazy">
+                        <div class="map-overlay">
+                            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo">
+                        <span class="logo-text">Michael's</span>
+                        <span class="logo-subtext">Trattoria</span>
+                    </a>
+                    <p>Fine Italian dining crafted with passion and tradition.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#events">Private Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Tue-Thu: 5PM - 9PM</li>
+                        <li>Fri-Sat: 5PM - 10PM</li>
+                        <li>Sun: 4PM - 8PM</li>
+                        <li>Mon: Closed</li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
