@@ -6,6 +6,19 @@
     <meta name="description" content="Michael's Trattoria desserts and specialty coffees - housemade Italian desserts, cannoli, cheesecake, and cocktail coffees. Italian restaurant in Wallingford, CT.">
     <title>Desserts Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
 
+    <!-- Canonical & Open Graph -->
+    <link rel="canonical" href="https://michaelstrattoria.com/desserts-menu.html">
+    <meta property="og:title" content="Desserts Menu | Michael's Trattoria - Italian Restaurant Wallingford CT">
+    <meta property="og:description" content="Michael's Trattoria desserts and specialty coffees - housemade Italian desserts, cannoli, cheesecake, and cocktail coffees. Italian restaurant in Wallingford, CT.">
+    <meta property="og:url" content="https://michaelstrattoria.com/desserts-menu.html">
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
+    <meta property="og:site_name" content="Michael's Trattoria">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +27,46 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
+
+    <!-- Menu Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Michael's Trattoria Desserts Menu",
+        "url": "https://michaelstrattoria.com/desserts-menu.html",
+        "mainEntity": {
+            "@type": "Restaurant",
+            "name": "Michael's Trattoria",
+            "url": "https://michaelstrattoria.com"
+        },
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Desserts",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Banana Cream Pie", "offers": { "@type": "Offer", "price": "7.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Mississippi Mud Pie", "offers": { "@type": "Offer", "price": "7.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cheesecake with Berries", "offers": { "@type": "Offer", "price": "7.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cannoli", "offers": { "@type": "Offer", "price": "5.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Sweet Special of the Day", "offers": { "@type": "Offer", "price": "7.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Specialty Coffees",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Irish Cream Coffee", "description": "Baileys Irish Cream & fresh brewed coffee topped with whipped cream" },
+                    { "@type": "MenuItem", "name": "Italian Coffee", "description": "Amaretto & fresh brewed coffee topped with whipped cream" },
+                    { "@type": "MenuItem", "name": "Hot White Russian", "description": "Kahlua, Vodka & fresh brewed coffee topped with whipped cream" },
+                    { "@type": "MenuItem", "name": "Kioki Coffee", "description": "Kahlua, Brandy & fresh brewed coffee topped with whipped cream" },
+                    { "@type": "MenuItem", "name": "Godiva Coffee", "description": "Godiva Chocolate Liqueur & fresh brewed coffee topped with whipped cream" },
+                    { "@type": "MenuItem", "name": "Cointreau Coffee", "description": "Cointreau & fresh brewed coffee topped with whipped cream" }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -233,7 +286,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>

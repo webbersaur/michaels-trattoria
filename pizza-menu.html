@@ -6,6 +6,19 @@
     <meta name="description" content="Michael's Trattoria pizza menu - specialty pies, classic red pie, toppings, and gluten free options. Italian restaurant in Wallingford, CT. 344 Center Street.">
     <title>Pizza Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
 
+    <!-- Canonical & Open Graph -->
+    <link rel="canonical" href="https://michaelstrattoria.com/pizza-menu.html">
+    <meta property="og:title" content="Pizza Menu | Michael's Trattoria - Italian Restaurant Wallingford CT">
+    <meta property="og:description" content="Michael's Trattoria pizza menu - specialty pies, classic red pie, toppings, and gluten free options. Italian restaurant in Wallingford, CT. 344 Center Street.">
+    <meta property="og:url" content="https://michaelstrattoria.com/pizza-menu.html">
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
+    <meta property="og:site_name" content="Michael's Trattoria">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +27,60 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
+
+    <!-- Menu Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Michael's Trattoria Pizza Menu",
+        "url": "https://michaelstrattoria.com/pizza-menu.html",
+        "mainEntity": {
+            "@type": "Restaurant",
+            "name": "Michael's Trattoria",
+            "url": "https://michaelstrattoria.com"
+        },
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Specialty Pies",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Meat Lover's", "description": "Pepperoni, Sausage, Bacon & Meatball", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Vegetable Lover's", "description": "Mushrooms, Peppers, Onions, Tomatoes & Olives", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Prosciutto & Tomato", "description": "Prosciutto, Fresh Tomato, Fresh Mozzarella & Arugula", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Shrimp Scampi Pizza", "description": "Shrimp, Garlic, Olive Oil & Fresh Mozzarella", "offers": { "@type": "Offer", "price": "24.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Clam Pizza", "description": "Fresh Clams, Garlic, Olive Oil & Mozzarella", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Spinach, Chicken & Ricotta", "description": "Spinach, Grilled Chicken, Ricotta & Mozzarella", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Broccoli Rabe & Sausage", "description": "Broccoli Rabe, Italian Sausage, Garlic & Mozzarella", "offers": { "@type": "Offer", "price": "22.00", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Classic Red Pie",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Classic Red Pie", "description": "Traditional Red Sauce & Mozzarella Cheese", "offers": { "@type": "Offer", "price": "16.00", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Toppings",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Standard Toppings", "description": "Pepperoni, Sausage, Mushrooms, Peppers, Onions, Olives, Bacon, Meatball", "offers": { "@type": "Offer", "price": "2.00", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Premium Toppings", "description": "Prosciutto, Chicken, Eggplant, Broccoli Rabe, Artichoke", "offers": { "@type": "Offer", "price": "3.50", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cheese & Vegetable Toppings", "description": "Fresh Mozzarella, Ricotta, Fresh Tomato, Spinach, Roasted Peppers", "offers": { "@type": "Offer", "price": "2.50", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Gluten Free",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Individual Gluten Free Pie", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Meat Lover's or Vegetable Lover's (Gluten Free)", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -262,7 +329,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>

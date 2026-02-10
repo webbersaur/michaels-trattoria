@@ -6,6 +6,19 @@
     <meta name="description" content="Michael's Trattoria - Italian restaurant in Wallingford, CT serving handcrafted pasta, premium steaks, fresh seafood, and classic Italian dishes. 344 Center Street, Wallingford. Call (203) 269-5303.">
     <title>Michael's Trattoria | Italian Restaurant in Wallingford, CT</title>
 
+    <!-- Canonical & Open Graph -->
+    <link rel="canonical" href="https://michaelstrattoria.com/">
+    <meta property="og:title" content="Michael's Trattoria | Italian Restaurant in Wallingford, CT">
+    <meta property="og:description" content="Michael's Trattoria - Italian restaurant in Wallingford, CT serving handcrafted pasta, premium steaks, fresh seafood, and classic Italian dishes. 344 Center Street, Wallingford. Call (203) 269-5303.">
+    <meta property="og:url" content="https://michaelstrattoria.com/">
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
+    <meta property="og:site_name" content="Michael's Trattoria">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +33,7 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "Michael's Trattoria",
-        "image": "michaels-restaurant-interior-dining-bar-area.webp",
+        "image": "https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp",
         "servesCuisine": "Italian",
         "priceRange": "$$",
         "address": {
@@ -28,7 +41,8 @@
             "streetAddress": "344 Center Street",
             "addressLocality": "Wallingford",
             "addressRegion": "CT",
-            "postalCode": "06492"
+            "postalCode": "06492",
+            "addressCountry": "US"
         },
         "geo": {
             "@type": "GeoCoordinates",
@@ -37,7 +51,62 @@
         },
         "telephone": "(203) 269-5303",
         "url": "https://michaelstrattoria.com",
-        "openingHours": ["Mo-Tu 16:00-22:00", "We-Th 11:30-22:00", "Fr-Sa 11:30-00:00", "Su 12:00-21:00"]
+        "openingHours": ["Mo-Tu 16:00-22:00", "We-Th 11:30-22:00", "Fr-Sa 11:30-00:00", "Su 12:00-21:00"],
+        "acceptsReservations": true,
+        "menu": "https://michaelstrattoria.com/menu.html",
+        "sameAs": [
+            "https://www.facebook.com/MichaelsTrattoria",
+            "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/"
+        ],
+        "hasMenu": {
+            "@type": "Menu",
+            "name": "Michael's Trattoria Menu",
+            "url": "https://michaelstrattoria.com/menu.html",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Signature Dishes",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Filet Mignon",
+                            "description": "8-ounce Filet topped with a Portobello Mushroom Glaze Sauce served with Potato & Vegetable",
+                            "offers": { "@type": "Offer", "price": "48.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Chicken Marsala",
+                            "description": "Sautéed in a Sweet Marsala Wine and Mushroom Sauce served over Penne",
+                            "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Lobster Ravioli",
+                            "description": "Served with Shrimp in a Vodka Sauce",
+                            "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Eggplant Parmesan",
+                            "description": "Michael's Legendary Housemade served over Penne",
+                            "offers": { "@type": "Offer", "price": "23.95", "priceCurrency": "USD" }
+                        }
+                    ]
+                }
+            ]
+        },
+        "potentialAction": {
+            "@type": "OrderAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+        }
     }
     </script>
 </head>
@@ -356,21 +425,9 @@
                 <div class="footer-social">
                     <h4>Follow Us</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook" class="social-link">
+                        <a href="https://www.facebook.com/MichaelsTrattoria" aria-label="Facebook" class="social-link" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
                                 <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Twitter" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                             </svg>
                         </a>
                     </div>
@@ -378,7 +435,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>

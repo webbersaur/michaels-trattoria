@@ -6,6 +6,19 @@
     <meta name="description" content="Michael's Trattoria dinner menu - Italian restaurant in Wallingford, CT featuring handcrafted pasta, fresh seafood, premium steaks, chicken and veal dishes. 344 Center Street, Wallingford.">
     <title>Dinner Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
 
+    <!-- Canonical & Open Graph -->
+    <link rel="canonical" href="https://michaelstrattoria.com/dinner-menu.html">
+    <meta property="og:title" content="Dinner Menu | Michael's Trattoria - Italian Restaurant Wallingford CT">
+    <meta property="og:description" content="Michael's Trattoria dinner menu - Italian restaurant in Wallingford, CT featuring handcrafted pasta, fresh seafood, premium steaks, chicken and veal dishes. 344 Center Street, Wallingford.">
+    <meta property="og:url" content="https://michaelstrattoria.com/dinner-menu.html">
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
+    <meta property="og:site_name" content="Michael's Trattoria">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +27,97 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
+
+    <!-- Menu Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Michael's Trattoria Dinner Menu",
+        "url": "https://michaelstrattoria.com/dinner-menu.html",
+        "mainEntity": {
+            "@type": "Restaurant",
+            "name": "Michael's Trattoria",
+            "url": "https://michaelstrattoria.com"
+        },
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Appetizers & Small Plates",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Meatballs", "description": "Served with Fresh Basil", "offers": { "@type": "Offer", "price": "12.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Eggplant Rollatini", "description": "Rolled Eggplant stuffed with Ricotta & Mozzarella Cheese, topped with Red Sauce", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fried Calamari", "description": "Classic Style or Sicilian Style", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fried Mozzarella", "description": "Encrusted with Bread & served with Red Sauce", "offers": { "@type": "Offer", "price": "10.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fresh Mozzarella", "description": "Fresh Tomatoes, Red Peppers, Mozzarella & Basil over Arugula", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Clams Casino", "description": "Fresh Clams with Onions, Peppers & Bacon", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Hot Seafood Sampler", "description": "Clams, Mussels & Shrimp in Red or White Wine Sauce", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cold Seafood Salad", "description": "Shrimp, Scallops & Calamari tossed with Red Onions & Celery", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Smoked Salmon", "description": "Served cold with Olive Oil, Red Onions, Capers & Toasted Garlic Bread", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Shrimp Cocktail", "description": "4 Shrimp served with Remoulade & Cocktail Sauce", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Salads",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Fresh Garden Salad with Berries", "description": "Baby Greens with Broccoli, Roasted Red Peppers, Carrots, Tomatoes & Berries", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Caesar Salad", "description": "Romaine Lettuce, Croutons, Grated Cheese & Housemade Caesar Dressing", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Pasta Entrees",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka", "offers": { "@type": "Offer", "price": "21.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka with Chicken", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka with Shrimp", "offers": { "@type": "Offer", "price": "28.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne with Meatballs or Sausage", "offers": { "@type": "Offer", "price": "21.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Spinach Alfredo", "description": "Tossed with Fettuccine", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne with Basil", "description": "With Roasted Red Peppers & Sausage in Light Plum Tomato Sauce", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Rigatoni Bolognese", "description": "Pork, Veal & Beef Ragu in Creamy Tomato Sauce", "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Eggplant Parmesan", "description": "Housemade served over Penne", "offers": { "@type": "Offer", "price": "23.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Seafood Entrees",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Shrimp Scampi", "description": "Shrimp in Garlic, Caper White Wine Sauce over Linguine", "offers": { "@type": "Offer", "price": "28.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Scallops Amante", "description": "With Spinach & Sun-dried Tomatoes in White Wine Sauce over Linguine", "offers": { "@type": "Offer", "price": "45.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fresh Clams", "description": "Over Linguine with Red or White Wine Sauce", "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Lobster Ravioli", "description": "Served with Shrimp in a Vodka Sauce", "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Zuppa Di Pesce", "description": "Lobster Tail, Shrimp, Clams, Calamari & Mussels with Linguine", "offers": { "@type": "Offer", "price": "49.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Salmon", "description": "Fresh Baked over Spinach with Creamy Dill Sauce", "offers": { "@type": "Offer", "price": "28.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Swordfish Puttanesca", "description": "In Plum Tomato Sauce with Capers, Olives & Penne", "offers": { "@type": "Offer", "price": "27.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Swordfish Florentine", "description": "Egg Battered in Lemon Caper White Wine Sauce over Spinach", "offers": { "@type": "Offer", "price": "31.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Seafood Linguine", "description": "Shrimp, Clams & Mussels in Red or White Wine Sauce", "offers": { "@type": "Offer", "price": "36.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Chicken & Veal Entrees",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Chicken Marsala", "description": "In Sweet Marsala Wine and Mushroom Sauce over Penne", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Piccata", "description": "In Lemon Caper White Wine Sauce with Spinach over Penne", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Parmesan", "description": "Breaded Cutlets with Red Sauce & Mozzarella over Penne", "offers": { "@type": "Offer", "price": "25.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Saltimbocca", "description": "With Prosciutto & Mozzarella in Brown Sage Sauce over Penne", "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken & Artichokes", "description": "With Artichoke Hearts, Roasted Red Peppers & Eggplant in Plum Tomato Sauce", "offers": { "@type": "Offer", "price": "27.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Steak House",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "New York Strip", "description": "12-ounce Flame Broiled with Potato & Vegetable", "offers": { "@type": "Offer", "price": "45.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Filet Mignon", "description": "8-ounce with Portobello Mushroom Glaze, Potato & Vegetable", "offers": { "@type": "Offer", "price": "48.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Pork Chop Milanese", "description": "Breaded & Sautéed in Lemon Vinaigrette over Salad", "offers": { "@type": "Offer", "price": "31.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cheeseburger", "description": "With Lettuce, Tomato & Onion on Brioche Roll with French Fries", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -475,7 +579,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>

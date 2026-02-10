@@ -6,6 +6,19 @@
     <meta name="description" content="Michael's Trattoria lunch menu - appetizers, salad bowls, sandwiches, seafood pasta, classics, and pasta entrees. Italian restaurant in Wallingford, CT. 344 Center Street.">
     <title>Lunch Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
 
+    <!-- Canonical & Open Graph -->
+    <link rel="canonical" href="https://michaelstrattoria.com/lunch-menu.html">
+    <meta property="og:title" content="Lunch Menu | Michael's Trattoria - Italian Restaurant Wallingford CT">
+    <meta property="og:description" content="Michael's Trattoria lunch menu - appetizers, salad bowls, sandwiches, seafood pasta, classics, and pasta entrees. Italian restaurant in Wallingford, CT. 344 Center Street.">
+    <meta property="og:url" content="https://michaelstrattoria.com/lunch-menu.html">
+    <meta property="og:type" content="restaurant.restaurant">
+    <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
+    <meta property="og:site_name" content="Michael's Trattoria">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +27,105 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/menu.css">
+
+    <!-- Menu Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Menu",
+        "name": "Michael's Trattoria Lunch Menu",
+        "url": "https://michaelstrattoria.com/lunch-menu.html",
+        "mainEntity": {
+            "@type": "Restaurant",
+            "name": "Michael's Trattoria",
+            "url": "https://michaelstrattoria.com"
+        },
+        "hasMenuSection": [
+            {
+                "@type": "MenuSection",
+                "name": "Appetizers",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Shrimp Cocktail", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Clams Casino", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fried Calamari", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fried Calamari Sicilian Style", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fried Mozzarella", "offers": { "@type": "Offer", "price": "9.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Eggplant Rollatini", "offers": { "@type": "Offer", "price": "12.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Meatballs", "offers": { "@type": "Offer", "price": "10.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Salad Bowls",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Cold Seafood Salad", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Antipasto Salad", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Caesar Salad", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Garden Salad with Berries", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fresh Mozzarella", "offers": { "@type": "Offer", "price": "12.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Sandwich & Grinder Platter",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Chicken Parmesan", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Eggplant Parmesan", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Meatball Parmesan", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Sausage, Peppers & Onions", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Veal Parmesan", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Italian Combo", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Grilled Chicken", "offers": { "@type": "Offer", "price": "12.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Cutlet", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Steak & Cheese", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Cheeseburger Deluxe", "offers": { "@type": "Offer", "price": "14.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fish Sandwich", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Fish & Seafood Pasta",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Salmon", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Swordfish Florentine", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Swordfish Puttanesca", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Fresh Clams", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Shrimp Scampi", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Clams, Mussels & Shrimp", "offers": { "@type": "Offer", "price": "18.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Classics",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Chicken Parmesan", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Marsala", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Saltimbocca", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken Piccata", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken & Artichokes", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Veal Parmesan", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Veal Marsala", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Veal Saltimbocca", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Veal Piccata", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "New York Strip Steak", "offers": { "@type": "Offer", "price": "24.95", "priceCurrency": "USD" } }
+                ]
+            },
+            {
+                "@type": "MenuSection",
+                "name": "Pasta",
+                "hasMenuItem": [
+                    { "@type": "MenuItem", "name": "Sausage, Peppers & Penne", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Rigatoni Bolognese", "offers": { "@type": "Offer", "price": "17.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne & Meatballs", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Chicken & Spinach Alfredo", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka", "offers": { "@type": "Offer", "price": "13.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka with Chicken", "offers": { "@type": "Offer", "price": "15.95", "priceCurrency": "USD" } },
+                    { "@type": "MenuItem", "name": "Penne Alla Vodka with Shrimp", "offers": { "@type": "Offer", "price": "16.95", "priceCurrency": "USD" } }
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -496,7 +608,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>
