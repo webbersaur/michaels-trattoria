@@ -285,6 +285,74 @@ address {
     width: 100%;
 }
 
+/* Nav Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    position: relative;
+    top: -1px;
+    transition: transform var(--transition-medium);
+}
+
+.nav-dropdown:hover .dropdown-arrow,
+.nav-dropdown.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 180px;
+    background-color: var(--color-bg-darker);
+    border-top: 2px solid var(--color-gold);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-medium), visibility var(--transition-medium);
+    padding: 0.5rem 0;
+    z-index: 1002;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-dropdown-menu li {
+    padding: 0;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast), background-color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover,
+.nav-dropdown-menu a.active {
+    color: var(--color-gold);
+    background-color: rgba(201, 169, 110, 0.1);
+}
+
 .nav-cta {
     padding: 0.75rem 1.5rem;
 }
@@ -969,6 +1037,37 @@ address {
 
     .nav-cta {
         display: none;
+    }
+
+    .nav-dropdown {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        min-width: 0;
+        border-top: none;
+        box-shadow: none;
+        background-color: transparent;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transition: max-height var(--transition-medium);
+        padding: 0;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+        max-height: 300px;
+        padding: 0.25rem 0;
+    }
+
+    .nav-dropdown-menu a {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
     }
 
     .about-grid {

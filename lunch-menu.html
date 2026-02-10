@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Michael's Trattoria lunch menu - appetizers, salad bowls, sandwiches, seafood pasta, classics, and pasta entrees. Italian restaurant in Wallingford, CT. 344 Center Street.">
+    <title>Lunch Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Michael's</span>
+                <span class="logo-subtext">Trattoria</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="menu.html" class="nav-link nav-dropdown-toggle active">Menu <span class="dropdown-arrow"></span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="dinner-menu.html">Dinner</a></li>
+                        <li><a href="lunch-menu.html" class="active">Lunch</a></li>
+                        <li><a href="pizza-menu.html">Pizza</a></li>
+                        <li><a href="desserts-menu.html">Desserts</a></li>
+                        <li><a href="catering-menu.html">Catering</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#events" class="nav-link">Private Events</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="index.html#contact" class="btn btn-primary nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1 class="menu-hero-title">Come and Experience</h1>
+            <h2 class="menu-hero-subtitle">LUNCH MENU</h2>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-nav">
+                <a href="#appetizers" class="category-item">
+                    <span class="category-icon">🍽️</span>
+                    <h4>Appetizers</h4>
+                </a>
+                <a href="#salads" class="category-item">
+                    <span class="category-icon">🥗</span>
+                    <h4>Salad Bowls</h4>
+                </a>
+                <a href="#sandwiches" class="category-item">
+                    <span class="category-icon">🥖</span>
+                    <h4>Sandwiches</h4>
+                </a>
+                <a href="#seafood" class="category-item">
+                    <span class="category-icon">🦐</span>
+                    <h4>Fish &amp; Seafood</h4>
+                </a>
+                <a href="#classics" class="category-item">
+                    <span class="category-icon">🍗</span>
+                    <h4>Classics</h4>
+                </a>
+                <a href="#pasta" class="category-item">
+                    <span class="category-icon">🍝</span>
+                    <h4>Pasta</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="menu-content">
+        <div class="container">
+
+            <!-- Appetizers -->
+            <section class="menu-section" id="appetizers">
+                <h3 class="menu-section-title">Appetizers</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Shrimp Cocktail</h4>
+                            <span class="menu-item-price">14.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Clams Casino</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fried Calamari</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fried Calamari Sicilian Style</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fried Mozzarella</h4>
+                            <span class="menu-item-price">9.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Eggplant Rollatini</h4>
+                            <span class="menu-item-price">12.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Meatballs</h4>
+                            <span class="menu-item-price">10.95</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Salad Bowls -->
+            <section class="menu-section" id="salads">
+                <h3 class="menu-section-title">Salad Bowls</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cold Seafood Salad</h4>
+                            <span class="menu-item-price">14.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Antipasto Salad</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Caesar Salad</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Garden Salad with Berries</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fresh Mozzarella</h4>
+                            <span class="menu-item-price">12.95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-note">
+                    <p><strong>Add to Any Salad:</strong> Grilled Chicken +7 | Grilled Steak +9 | Salmon +8 | Shrimp +8</p>
+                </div>
+            </section>
+
+            <!-- Sandwich & Grinder Platter -->
+            <section class="menu-section" id="sandwiches">
+                <h3 class="menu-section-title">Sandwich &amp; Grinder Platter</h3>
+
+                <div class="menu-note">
+                    <p>Served with your choice of French Fries, Pasta, or Garden Salad</p>
+                </div>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Parmesan</h4>
+                            <span class="menu-item-price">14.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Eggplant Parmesan</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Meatball Parmesan</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Sausage, Peppers &amp; Onions</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veal Parmesan</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Italian Combo</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Grilled Chicken</h4>
+                            <span class="menu-item-price">12.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Cutlet</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Steak &amp; Cheese</h4>
+                            <span class="menu-item-price">14.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cheeseburger Deluxe</h4>
+                            <span class="menu-item-price">14.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fish Sandwich</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fish & Seafood Pasta -->
+            <section class="menu-section" id="seafood">
+                <h3 class="menu-section-title">Fish &amp; Seafood Pasta</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Salmon</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Swordfish Florentine</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Swordfish Puttanesca</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fresh Clams</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Shrimp Scampi</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Clams, Mussels &amp; Shrimp</h4>
+                            <span class="menu-item-price">18.95</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Classics -->
+            <section class="menu-section" id="classics">
+                <h3 class="menu-section-title">Classics</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Parmesan</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Marsala</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Saltimbocca</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken Piccata</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken &amp; Artichokes</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veal Parmesan</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veal Marsala</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veal Saltimbocca</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veal Piccata</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">New York Strip Steak</h4>
+                            <span class="menu-item-price">24.95</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pasta -->
+            <section class="menu-section" id="pasta">
+                <h3 class="menu-section-title">Pasta</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Sausage, Peppers &amp; Penne</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Rigatoni Bolognese</h4>
+                            <span class="menu-item-price">17.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Penne &amp; Meatballs</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chicken &amp; Spinach Alfredo</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Penne Alla Vodka</h4>
+                            <span class="menu-item-price">13.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Penne Alla Vodka with Chicken</h4>
+                            <span class="menu-item-price">15.95</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Penne Alla Vodka with Shrimp</h4>
+                            <span class="menu-item-price">16.95</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Menu Footer Info -->
+    <section class="menu-footer-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-column">
+                    <h4>Location</h4>
+                    <p>344 Center Street<br>Wallingford, CT 06492</p>
+                </div>
+                <div class="info-column">
+                    <h4>Contact</h4>
+                    <p>Call for Reservation</p>
+                    <a href="tel:+12032695303" class="phone">(203) 269-5303</a>
+                </div>
+                <div class="info-column">
+                    <h4>Opening Hours</h4>
+                    <p>Mon-Tue: 4:00pm - 10:00pm</p>
+                    <p>Wed-Thu: 11:30am - 10:00pm</p>
+                    <p>Fri-Sat: 11:30am - 12:00am</p>
+                    <p>Sunday: 12:00pm - 9:00pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
