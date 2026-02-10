@@ -27,6 +27,12 @@
     color: var(--color-gold);
 }
 
+/* Standalone hero heading (individual menu pages without tagline) */
+h1.menu-hero-subtitle {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    letter-spacing: 8px;
+}
+
 /* Wine Hero Video */
 .wine-hero {
     position: relative;
@@ -403,5 +409,10 @@
     .menu-hero-subtitle {
         font-size: 0.875rem;
         letter-spacing: 3px;
+    }
+
+    h1.menu-hero-subtitle {
+        font-size: 1.25rem;
+        letter-spacing: 5px;
     }
 }
