@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Michael's Trattoria wine menu - reserve wines, Italian reds, California cabernets, sparkling champagne, and white wines. Italian restaurant in Wallingford, CT. 344 Center Street.">
+    <title>Wine Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Michael's</span>
+                <span class="logo-subtext">Trattoria</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="menu.html" class="nav-link nav-dropdown-toggle active">Menu <span class="dropdown-arrow"></span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="dinner-menu.html">Dinner</a></li>
+                        <li><a href="lunch-menu.html">Lunch</a></li>
+                        <li><a href="pizza-menu.html">Pizza</a></li>
+                        <li><a href="desserts-menu.html">Desserts</a></li>
+                        <li><a href="wine-menu.html" class="active">Wine</a></li>
+                        <li><a href="catering-menu.html">Catering</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="index.html#events" class="nav-link">Private Events</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="index.html#contact" class="btn btn-primary nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Menu Hero with Video -->
+    <section class="menu-hero wine-hero">
+        <div class="wine-hero-video">
+            <video autoplay muted loop playsinline>
+                <source src="wine-pour.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="menu-hero-content">
+            <h1 class="menu-hero-title">Come and Experience</h1>
+            <h2 class="menu-hero-subtitle">WINE MENU</h2>
+        </div>
+    </section>
+
+    <!-- Category Navigation -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-nav">
+                <a href="#sparkling" class="category-item">
+                    <span class="category-icon">🍾</span>
+                    <h4>Sparkling</h4>
+                </a>
+                <a href="#white" class="category-item">
+                    <span class="category-icon">🥂</span>
+                    <h4>White Wine</h4>
+                </a>
+                <a href="#red" class="category-item">
+                    <span class="category-icon">🍷</span>
+                    <h4>Red Wine</h4>
+                </a>
+                <a href="#reserve" class="category-item">
+                    <span class="category-icon">⭐</span>
+                    <h4>Reserve Wines</h4>
+                </a>
+                <a href="#half-bottles" class="category-item">
+                    <span class="category-icon">🍶</span>
+                    <h4>Half Bottles</h4>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="menu-content">
+        <div class="container">
+
+            <!-- Sparkling & Champagne -->
+            <section class="menu-section" id="sparkling">
+                <h3 class="menu-section-title">Sparkling &amp; Champagne</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Lunetta Prosecco</h4>
+                            <span class="menu-item-price">28</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Deutz Brut Rosé</h4>
+                            <span class="menu-item-price">79</span>
+                        </div>
+                        <p class="menu-item-description">France</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Veuve Clicquot Brut Yellow Label</h4>
+                            <span class="menu-item-price">99</span>
+                        </div>
+                        <p class="menu-item-description">N.V. France</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Louis Roederer Brut Premier</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">France (Half Bottle)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- White Wine -->
+            <section class="menu-section" id="white">
+                <h3 class="menu-section-title">White Wine</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chardonnay, Chalk Hill Estate</h4>
+                            <span class="menu-item-price">75</span>
+                        </div>
+                        <p class="menu-item-description">Sonoma</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chardonnay, Jordan Estate</h4>
+                            <span class="menu-item-price">68</span>
+                        </div>
+                        <p class="menu-item-description">Sonoma</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chardonnay, Benziger</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chardonnay, Clos du Bois</h4>
+                            <span class="menu-item-price">32</span>
+                        </div>
+                        <p class="menu-item-description">Sonoma</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pouilly Fuissé, Bouchard Père &amp; Fils</h4>
+                            <span class="menu-item-price">45</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Fumé Blanc, Ferrari Carano</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Sauvignon Blanc, Benziger</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Sauvignon Blanc, Honig</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">Napa, California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Grigio, Ruffino Lumina</h4>
+                            <span class="menu-item-price">32</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Grigio, Bortoluzzi</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Grigio, Bollini</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Red Wine -->
+            <section class="menu-section" id="red">
+                <h3 class="menu-section-title">Red Wine</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Bonterra (Organic)</h4>
+                            <span class="menu-item-price">35</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Hess Estate Allomi</h4>
+                            <span class="menu-item-price">60</span>
+                        </div>
+                        <p class="menu-item-description">Napa Valley</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Alexander Valley</h4>
+                            <span class="menu-item-price">45</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, J. Lohr Seven Oaks</h4>
+                            <span class="menu-item-price">42</span>
+                        </div>
+                        <p class="menu-item-description">Napa</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Avalon</h4>
+                            <span class="menu-item-price">35</span>
+                        </div>
+                        <p class="menu-item-description">Napa</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Sterling Vintners</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Francis Ford Coppola</h4>
+                            <span class="menu-item-price">50</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Merlot, Grand Estates, Columbia Crest</h4>
+                            <span class="menu-item-price">32</span>
+                        </div>
+                        <p class="menu-item-description">Washington</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Noir, Hob Nob</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">France</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Noir, Mark West</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Noir, Laetitia</h4>
+                            <span class="menu-item-price">49</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Noir, Cloudline</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">Oregon</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Shiraz, Rosemont Diamond</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">Australia</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Zinfandel, Cline</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Zinfandel, Ravenswood Vintners Blend</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Primitivo, Maxale</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chianti Classico DOCG R.S., Coltibuono</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chianti, Rocco Delle Macie</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chianti, Aziano Ruffino</h4>
+                            <span class="menu-item-price">39</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Montepulciano d'Abruzzo, Zaccagnini</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Super Tuscan, Villa Capezzana Barco Reale</h4>
+                            <span class="menu-item-price">36</span>
+                        </div>
+                        <p class="menu-item-description">Italy</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Bordeaux, Château de Costis</h4>
+                            <span class="menu-item-price">32</span>
+                        </div>
+                        <p class="menu-item-description">France</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Monastrell, Juan Gil</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">Spain</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Malbec, Cabrini</h4>
+                            <span class="menu-item-price">32</span>
+                        </div>
+                        <p class="menu-item-description">Argentina</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Malbec, Cigar Box</h4>
+                            <span class="menu-item-price">34</span>
+                        </div>
+                        <p class="menu-item-description">Argentina</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reserve Wines -->
+            <section class="menu-section" id="reserve">
+                <h3 class="menu-section-title">Reserve Wines</h3>
+
+                <!-- California -->
+                <h3 class="menu-section-title subsection">California</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Semillion Blend, Arietta On the White Keys</h4>
+                            <span class="menu-item-price">88</span>
+                        </div>
+                        <p class="menu-item-description">Napa '17</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Pinot Noir, Clark &amp; Telephone, Belle Glos</h4>
+                            <span class="menu-item-price">68</span>
+                        </div>
+                        <p class="menu-item-description">Napa '17</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Merlot, Duckhorn</h4>
+                            <span class="menu-item-price">78</span>
+                        </div>
+                        <p class="menu-item-description">Napa '13</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, Arietta Quartet</h4>
+                            <span class="menu-item-price">98</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, Orin Swift Abstract</h4>
+                            <span class="menu-item-price">58</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, B.V. Tapestry Meritage Reserve</h4>
+                            <span class="menu-item-price">98</span>
+                        </div>
+                        <p class="menu-item-description">Napa '12</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, Quintessa</h4>
+                            <span class="menu-item-price">225</span>
+                        </div>
+                        <p class="menu-item-description">Napa '11</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, Opus One</h4>
+                            <span class="menu-item-price">350</span>
+                        </div>
+                        <p class="menu-item-description">Napa '05</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Red Blend, Joseph Phelps Insignia</h4>
+                            <span class="menu-item-price">350</span>
+                        </div>
+                        <p class="menu-item-description">'10</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cab Franc, Arietta H-Block</h4>
+                            <span class="menu-item-price">225</span>
+                        </div>
+                        <p class="menu-item-description">Napa '06</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet, Jordan</h4>
+                            <span class="menu-item-price">90</span>
+                        </div>
+                        <p class="menu-item-description">Sonoma '14</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Caymus Vineyards</h4>
+                            <span class="menu-item-price">140</span>
+                        </div>
+                        <p class="menu-item-description">Napa '16</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Cakebread</h4>
+                            <span class="menu-item-price">125</span>
+                        </div>
+                        <p class="menu-item-description">Napa '16</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Silver Oak</h4>
+                            <span class="menu-item-price">125</span>
+                        </div>
+                        <p class="menu-item-description">Alexander Valley '14</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Chimney Rock</h4>
+                            <span class="menu-item-price">140</span>
+                        </div>
+                        <p class="menu-item-description">Napa '12</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Clos Du Val</h4>
+                            <span class="menu-item-price">69</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Frogs Leap Rutherford</h4>
+                            <span class="menu-item-price">79</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Turnbull Wine Cellar</h4>
+                            <span class="menu-item-price">70</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Caymus Special Select</h4>
+                            <span class="menu-item-price">250</span>
+                        </div>
+                        <p class="menu-item-description">Napa '09</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Hall</h4>
+                            <span class="menu-item-price">89</span>
+                        </div>
+                        <p class="menu-item-description">Napa '14</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Charles Krug</h4>
+                            <span class="menu-item-price">59</span>
+                        </div>
+                        <p class="menu-item-description">Napa '15</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Faust</h4>
+                            <span class="menu-item-price">89</span>
+                        </div>
+                        <p class="menu-item-description">Napa '16</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Joseph Phelps</h4>
+                            <span class="menu-item-price">125</span>
+                        </div>
+                        <p class="menu-item-description">Napa '13</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Honig</h4>
+                            <span class="menu-item-price">69</span>
+                        </div>
+                        <p class="menu-item-description">Napa '16</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Orin Swift Palermo</h4>
+                            <span class="menu-item-price">80</span>
+                        </div>
+                        <p class="menu-item-description">Napa '14</p>
+                    </div>
+                </div>
+
+                <!-- Italy -->
+                <h3 class="menu-section-title subsection">Italy</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Ruffino Riserva Ducale Gold</h4>
+                            <span class="menu-item-price">70</span>
+                        </div>
+                        <p class="menu-item-description">Chianti Classico, Tuscany '12</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Super Tuscan, Gaja Promis</h4>
+                            <span class="menu-item-price">89</span>
+                        </div>
+                        <p class="menu-item-description">Tuscany '16</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Super Tuscan, Banfi Summus</h4>
+                            <span class="menu-item-price">110</span>
+                        </div>
+                        <p class="menu-item-description">Tuscany '14</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Barolo, Marchesi Di Barolo</h4>
+                            <span class="menu-item-price">79</span>
+                        </div>
+                        <p class="menu-item-description">Piedmont '12</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Amarone, Bertani Villa Arvedi</h4>
+                            <span class="menu-item-price">79</span>
+                        </div>
+                        <p class="menu-item-description">Italy '14</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Tenuta San Guido, Guidalberto</h4>
+                            <span class="menu-item-price">85</span>
+                        </div>
+                        <p class="menu-item-description">Baby Sassicaia, Tuscany '11</p>
+                    </div>
+                </div>
+
+                <p class="menu-special-note">✦ Vintages are subject to change due to limited availability ✦</p>
+            </section>
+
+            <!-- Half Bottles -->
+            <section class="menu-section" id="half-bottles">
+                <h3 class="menu-section-title">Half Bottles</h3>
+
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Chardonnay, Alexander Valley</h4>
+                            <span class="menu-item-price">21</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Alexander Valley</h4>
+                            <span class="menu-item-price">24</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Simi</h4>
+                            <span class="menu-item-price">24</span>
+                        </div>
+                        <p class="menu-item-description">California</p>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h4 class="menu-item-name">Cabernet Sauvignon, Faust</h4>
+                            <span class="menu-item-price">45</span>
+                        </div>
+                        <p class="menu-item-description">Napa</p>
+                    </div>
+                </div>
+            </section>
+
+            <p class="menu-disclaimer">Please Drink Responsibly</p>
+
+        </div>
+    </main>
+
+    <!-- Menu Footer Info -->
+    <section class="menu-footer-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-column">
+                    <h4>Location</h4>
+                    <p>344 Center Street<br>Wallingford, CT 06492</p>
+                </div>
+                <div class="info-column">
+                    <h4>Contact</h4>
+                    <p>Call for Reservation</p>
+                    <a href="tel:+12032695303" class="phone">(203) 269-5303</a>
+                </div>
+                <div class="info-column">
+                    <h4>Opening Hours</h4>
+                    <p>Mon-Tue: 4:00pm - 10:00pm</p>
+                    <p>Wed-Thu: 11:30am - 10:00pm</p>
+                    <p>Fri-Sat: 11:30am - 12:00am</p>
+                    <p>Sunday: 12:00pm - 9:00pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Michael's Trattoria. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

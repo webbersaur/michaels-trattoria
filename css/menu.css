@@ -27,6 +27,46 @@
     color: var(--color-gold);
 }
 
+/* Wine Hero Video */
+.wine-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wine-hero .menu-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wine-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wine-hero-video::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.wine-hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Category Navigation */
 .menu-categories {
     background-color: var(--color-bg-dark);
