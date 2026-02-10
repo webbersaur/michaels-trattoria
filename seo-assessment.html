@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Assessment - Michael's Trattoria | February 2025</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; background: #f8f9fa; }
+
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .header .subtitle { color: #a0aec0; font-size: 1.1rem; }
+        .header .date { color: #718096; font-size: 0.9rem; margin-top: 0.5rem; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        .alert { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem; }
+        .alert.critical { background: #f8d7da; border-left-color: #dc3545; }
+        .alert.success { background: #d4edda; border-left-color: #28a745; }
+        .alert h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+        .alert p { font-size: 0.95rem; color: #495057; }
+
+        .section { background: #fff; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .section h2 { font-size: 1.35rem; margin-bottom: 1rem; color: #1a1a2e; border-bottom: 2px solid #e9ecef; padding-bottom: 0.75rem; }
+        .section h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: #2d3748; }
+
+        .ranking-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .ranking-table th { background: #f7fafc; text-align: left; padding: 0.75rem 1rem; font-size: 0.85rem; text-transform: uppercase; color: #718096; letter-spacing: 0.05em; border-bottom: 2px solid #e2e8f0; }
+        .ranking-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table .you { background: #ebf8ff; font-weight: 600; }
+        .ranking-table .you td { color: #2b6cb0; }
+
+        .rank-badge { display: inline-block; background: #e2e8f0; color: #4a5568; font-weight: 700; font-size: 0.85rem; width: 28px; height: 28px; line-height: 28px; text-align: center; border-radius: 50%; }
+        .you .rank-badge { background: #3182ce; color: #fff; }
+
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .metric { background: #f7fafc; border-radius: 8px; padding: 1.25rem; text-align: center; }
+        .metric .value { font-size: 2rem; font-weight: 700; color: #2d3748; }
+        .metric .label { font-size: 0.85rem; color: #718096; margin-top: 0.25rem; }
+        .metric.good .value { color: #38a169; }
+        .metric.warning .value { color: #d69e2e; }
+        .metric.bad .value { color: #e53e3e; }
+
+        .competitor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .competitor { background: #f7fafc; border-radius: 8px; padding: 1rem 1.25rem; }
+        .competitor .name { font-weight: 600; font-size: 1rem; }
+        .competitor .detail { font-size: 0.85rem; color: #718096; margin-top: 0.25rem; }
+        .competitor .stars { color: #d69e2e; }
+
+        .priority-list { list-style: none; counter-reset: priority; }
+        .priority-list li { padding: 1rem 1rem 1rem 3.5rem; margin-bottom: 0.75rem; border-radius: 8px; position: relative; border: 1px solid #e2e8f0; }
+        .priority-list li::before { counter-increment: priority; content: counter(priority); position: absolute; left: 1rem; top: 1rem; background: #3182ce; color: #fff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 0.85rem; }
+        .priority-list li.high { border-left: 4px solid #e53e3e; }
+        .priority-list li.high::before { background: #e53e3e; }
+        .priority-list li.medium { border-left: 4px solid #d69e2e; }
+        .priority-list li.medium::before { background: #d69e2e; }
+        .priority-list li.low { border-left: 4px solid #38a169; }
+        .priority-list li.low::before { background: #38a169; }
+        .priority-list .title { font-weight: 600; display: block; }
+        .priority-list .desc { font-size: 0.9rem; color: #4a5568; margin-top: 0.25rem; }
+        .priority-list .impact { font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; }
+        .impact-high { background: #fed7d7; color: #c53030; }
+        .impact-medium { background: #fefcbf; color: #975a16; }
+        .impact-low { background: #c6f6d5; color: #276749; }
+
+        .tag { display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; }
+        .tag-offsite { background: #e9d8fd; color: #553c9a; }
+        .tag-onsite { background: #bee3f8; color: #2a4365; }
+        .tag-content { background: #fefcbf; color: #975a16; }
+
+        .done-list { list-style: none; margin: 1rem 0; }
+        .done-list li { padding: 0.5rem 0 0.5rem 2rem; position: relative; color: #38a169; }
+        .done-list li::before { content: "\2713"; position: absolute; left: 0.25rem; font-weight: 700; font-size: 1.1rem; }
+
+        .footer-note { text-align: center; color: #a0aec0; font-size: 0.85rem; padding: 2rem 0; }
+
+        @media (max-width: 600px) {
+            .competitor-grid { grid-template-columns: 1fr; }
+            .metric-grid { grid-template-columns: 1fr 1fr; }
+            .header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container">
+        <h1>SEO Assessment: Michael's Trattoria</h1>
+        <div class="subtitle">Local Search Visibility for "Restaurants in Wallingford CT"</div>
+        <div class="date">Prepared February 10, 2025</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Critical Alert -->
+    <div class="alert critical">
+        <h3>Critical: Google Has Old Website Indexed</h3>
+        <p>Google's index still shows the old WordPress site URLs (<code>/dinner/</code>, <code>/lunch/</code>, <code>/about-us/</code>, etc.) instead of the new static site pages (<code>/dinner-menu.html</code>, <code>/lunch-menu.html</code>, etc.). The new pages may not be fully indexed yet. The sitemap we just created will help, but <strong>submitting it via Google Search Console is the single most important next step.</strong></p>
+    </div>
+
+    <!-- Current Rankings -->
+    <div class="section">
+        <h2>Where You Rank Today</h2>
+
+        <div class="metric-grid">
+            <div class="metric warning">
+                <div class="value">#9</div>
+                <div class="label">"italian restaurant wallingford ct"</div>
+            </div>
+            <div class="metric bad">
+                <div class="value">N/A</div>
+                <div class="label">"restaurants in wallingford ct"</div>
+            </div>
+            <div class="metric good">
+                <div class="value">4.5 &#9733;</div>
+                <div class="label">Google Rating</div>
+            </div>
+            <div class="metric warning">
+                <div class="value">227</div>
+                <div class="label">Yelp Reviews</div>
+            </div>
+        </div>
+
+        <h3>"italian restaurant wallingford ct" &mdash; Organic Results</h3>
+        <table class="ranking-table">
+            <thead>
+                <tr><th>Rank</th><th>Restaurant</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><span class="rank-badge">1</span></td><td>Serafino's Restaurant</td><td>"Best Italian Food 2025" award</td></tr>
+                <tr><td><span class="rank-badge">2</span></td><td>Fratelli's</td><td>Pizza-focused</td></tr>
+                <tr><td><span class="rank-badge">3</span></td><td>Napoli Pizza</td><td>Since 1967, strong local authority</td></tr>
+                <tr><td><span class="rank-badge">4</span></td><td>Favio's Trattoria</td><td>Newer, but strong SEO + reviews</td></tr>
+                <tr><td><span class="rank-badge">5</span></td><td>TripAdvisor listing page</td><td>Aggregator</td></tr>
+                <tr><td><span class="rank-badge">6</span></td><td>OpenTable listing page</td><td>Aggregator</td></tr>
+                <tr><td><span class="rank-badge">7</span></td><td>Christos Restaurant</td><td>Targets "italian restaurants wallingford ct" in title</td></tr>
+                <tr><td><span class="rank-badge">8</span></td><td>Hometown Pizza</td><td>Brick oven / New Haven style</td></tr>
+                <tr class="you"><td><span class="rank-badge">9</span></td><td>Michael's Trattoria</td><td>Title shows "Fine Italian Cuisine" (generic)</td></tr>
+                <tr><td><span class="rank-badge">10</span></td><td>Yelp listing page</td><td>Aggregator</td></tr>
+            </tbody>
+        </table>
+
+        <h3>"restaurants in wallingford ct" &mdash; Not Ranking</h3>
+        <p style="color: #718096; font-size: 0.95rem; margin-top: 0.5rem;">This broad query is dominated by aggregator sites (TripAdvisor, Yelp, OpenTable, Google Maps). Individual restaurants almost never rank here. <strong>The Google Maps 3-pack above organic results is where restaurant clicks happen for this query</strong> &mdash; that's controlled by your Google Business Profile, not your website.</p>
+    </div>
+
+    <!-- Competitive Landscape -->
+    <div class="section">
+        <h2>Competitive Landscape</h2>
+        <p style="color: #718096; margin-bottom: 1rem;">Your main competitors for "Italian restaurant in Wallingford" searches:</p>
+
+        <div class="competitor-grid">
+            <div class="competitor">
+                <div class="name">Serafino's Restaurant</div>
+                <div class="detail"><span class="stars">&#9733;</span> 4.1&ndash;4.6 Google &bull; 158 Yelp reviews</div>
+                <div class="detail">Won "Best Italian 2025" &bull; Has OpenTable</div>
+                <div class="detail" style="color: #e53e3e;">Ranks #1 organic</div>
+            </div>
+            <div class="competitor">
+                <div class="name">Favio's Trattoria</div>
+                <div class="detail"><span class="stars">&#9733;</span> 4.5 Google &bull; 16 Yelp reviews</div>
+                <div class="detail">Newer restaurant, strong website SEO</div>
+                <div class="detail" style="color: #d69e2e;">Ranks #4 organic (despite fewer reviews)</div>
+            </div>
+            <div class="competitor">
+                <div class="name">Fratelli's</div>
+                <div class="detail"><span class="stars">&#9733;</span> Pizza-focused Italian</div>
+                <div class="detail">Established local presence</div>
+                <div class="detail" style="color: #d69e2e;">Ranks #2 organic</div>
+            </div>
+            <div class="competitor">
+                <div class="name">Christos Restaurant</div>
+                <div class="detail">Targets exact keyword in page title</div>
+                <div class="detail">"Italian Restaurants Wallingford CT" as H1</div>
+                <div class="detail" style="color: #d69e2e;">Ranks #7 organic</div>
+            </div>
+        </div>
+
+        <h3>Your Advantages</h3>
+        <ul style="margin: 0.5rem 0 0 1.5rem; color: #4a5568;">
+            <li><strong>30+ years in business</strong> (since 1994) &mdash; strongest history of any competitor</li>
+            <li><strong>4.5 Google stars</strong> &mdash; highest among Italian competitors</li>
+            <li><strong>227 Yelp reviews</strong> &mdash; more than any single competitor</li>
+            <li><strong>Strong menu variety</strong> &mdash; dinner, lunch, pizza, catering, wine, private events</li>
+            <li><strong>DoorDash presence</strong> &mdash; delivery capability</li>
+        </ul>
+    </div>
+
+    <!-- What Matters Most -->
+    <div class="section">
+        <h2>What Actually Moves the Needle</h2>
+        <p style="color: #718096; margin-bottom: 1rem;">For local restaurant searches, here's what Google weighs most heavily, in order:</p>
+
+        <div class="metric-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="metric" style="border: 2px solid #e53e3e;">
+                <div class="value" style="font-size: 1.5rem; color: #e53e3e;">60%</div>
+                <div class="label"><strong>Google Business Profile</strong><br>Map pack, categories, photos, posts</div>
+            </div>
+            <div class="metric" style="border: 2px solid #d69e2e;">
+                <div class="value" style="font-size: 1.5rem; color: #d69e2e;">25%</div>
+                <div class="label"><strong>Reviews & Reputation</strong><br>Review count, rating, recency, responses</div>
+            </div>
+            <div class="metric" style="border: 2px solid #38a169;">
+                <div class="value" style="font-size: 1.5rem; color: #38a169;">15%</div>
+                <div class="label"><strong>Website & On-Page SEO</strong><br>Content, schema, speed, links</div>
+            </div>
+        </div>
+
+        <p style="color: #718096; font-size: 0.9rem; margin-top: 1rem;">This means the biggest improvements won't come from website changes alone. Google Business Profile optimization and a review strategy deliver the most impact for local restaurant search.</p>
+    </div>
+
+    <!-- Action Plan -->
+    <div class="section">
+        <h2>Recommended Action Plan</h2>
+
+        <ol class="priority-list">
+            <li class="high">
+                <span class="title">Submit Sitemap to Google Search Console</span>
+                <span class="desc">Google still has the old WordPress URLs indexed. Submit the new sitemap.xml via Google Search Console immediately so Google discovers and indexes the new pages. Also submit URL removal requests for the old WordPress URLs that no longer exist.</span>
+                <span class="impact impact-high">Critical &mdash; fixes indexing</span>
+                <span class="tag tag-onsite">On-site</span>
+            </li>
+
+            <li class="high">
+                <span class="title">Optimize Google Business Profile</span>
+                <span class="desc">Ensure GBP is fully complete: correct primary category ("Italian Restaurant"), add secondary categories ("Seafood Restaurant", "Catering Food and Drink Supplier", "Bar"), upload 20+ high-quality photos, add menu link to new website, write a keyword-rich business description, enable messaging, post weekly updates (specials, events). This controls whether you appear in the Map 3-pack.</span>
+                <span class="impact impact-high">Highest impact for local search</span>
+                <span class="tag tag-offsite">Off-site</span>
+            </li>
+
+            <li class="high">
+                <span class="title">Launch a Review Strategy</span>
+                <span class="desc">You have a 4.5 star rating which is excellent, but need more recent Google reviews specifically (Yelp reviews don't help Google rankings). Train staff to ask satisfied diners to leave a Google review. Create a short URL or QR code for the table. Respond to every review (positive and negative) within 24-48 hours. Target 5+ new Google reviews per month.</span>
+                <span class="impact impact-high">Major ranking factor</span>
+                <span class="tag tag-offsite">Off-site</span>
+            </li>
+
+            <li class="medium">
+                <span class="title">Claim & Optimize Directory Listings</span>
+                <span class="desc">Ensure consistent NAP (Name, Address, Phone) across: TripAdvisor, Yelp, OpenTable, Facebook, Apple Maps, Bing Places, Foursquare, Yellow Pages, and CT-specific directories (CTvisit.com &mdash; already listed). Update all listings to link to the new website URL.</span>
+                <span class="impact impact-medium">Builds local authority</span>
+                <span class="tag tag-offsite">Off-site</span>
+            </li>
+
+            <li class="medium">
+                <span class="title">Add Local Content to Website</span>
+                <span class="desc">The homepage needs more Wallingford-specific text content. Add neighborhood references ("downtown Wallingford", "Center Street"), mention nearby landmarks, write about the restaurant's 30-year history in the community. Google rewards locally-relevant content for local searches. Consider adding a dedicated About page with the founder's story.</span>
+                <span class="impact impact-medium">Improves topical relevance</span>
+                <span class="tag tag-content">Content</span>
+            </li>
+
+            <li class="medium">
+                <span class="title">Create a Dedicated Private Events Page</span>
+                <span class="desc">Currently private events is just a section on the homepage. A standalone page targeting "private dining wallingford ct", "event venue wallingford ct" captures long-tail searches with high booking intent.</span>
+                <span class="impact impact-medium">Captures long-tail traffic</span>
+                <span class="tag tag-onsite">On-site</span>
+            </li>
+
+            <li class="low">
+                <span class="title">Build Local Backlinks</span>
+                <span class="desc">Pursue links from: Wallingford Chamber of Commerce, local food bloggers, CT dining guides, wedding/event planning sites (for private dining), local news features, community sponsorships. Each quality local backlink strengthens domain authority.</span>
+                <span class="impact impact-low">Long-term authority building</span>
+                <span class="tag tag-offsite">Off-site</span>
+            </li>
+
+            <li class="low">
+                <span class="title">Set Up 301 Redirects from Old URLs</span>
+                <span class="desc">The old WordPress URLs (<code>/dinner/</code>, <code>/lunch/</code>, <code>/about-us/</code>, etc.) still show in Google's index. If possible, set up 301 redirects from the old paths to the new pages. This preserves any link equity from the old pages and prevents 404 errors for existing visitors.</span>
+                <span class="impact impact-low">Preserves existing authority</span>
+                <span class="tag tag-onsite">On-site</span>
+            </li>
+        </ol>
+    </div>
+
+    <!-- What's Already Done -->
+    <div class="section">
+        <h2>What's Already in Place</h2>
+        <p style="color: #718096; margin-bottom: 0.75rem;">These SEO foundations were recently completed:</p>
+        <ul class="done-list">
+            <li>Meta descriptions on all 8 pages</li>
+            <li>SEO-optimized image alt text across the site</li>
+            <li>Restaurant schema (JSON-LD) on homepage with full business data</li>
+            <li>Menu schema (JSON-LD) on all 5 food menu pages</li>
+            <li>Canonical URLs on all pages</li>
+            <li>Open Graph tags for social sharing</li>
+            <li>XML sitemap with all pages</li>
+            <li>robots.txt with sitemap reference</li>
+            <li>Favicon for brand recognition in tabs and bookmarks</li>
+            <li>Mobile-responsive design</li>
+            <li>DoorDash ordering integration with OrderAction schema</li>
+            <li>Geo-coordinates in schema markup</li>
+        </ul>
+    </div>
+
+    <!-- Bottom Line -->
+    <div class="section" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff;">
+        <h2 style="color: #fff; border-bottom-color: rgba(255,255,255,0.2);">The Bottom Line</h2>
+        <p style="color: #cbd5e0; font-size: 1.05rem; line-height: 1.7;">
+            Michael's Trattoria has the <strong style="color: #fff;">longest track record</strong> (30+ years), <strong style="color: #fff;">highest Google rating</strong> (4.5 stars), and <strong style="color: #fff;">most reviews</strong> of any Italian restaurant in Wallingford. The new website has strong technical SEO foundations.
+        </p>
+        <p style="color: #cbd5e0; font-size: 1.05rem; line-height: 1.7; margin-top: 1rem;">
+            The ranking gap isn't about website quality &mdash; it's about <strong style="color: #fff;">Google Business Profile completeness</strong>, <strong style="color: #fff;">recent review velocity</strong>, and <strong style="color: #fff;">getting the new site indexed</strong>. Submitting the sitemap to Search Console and optimizing GBP are the two moves that will produce the fastest, most visible results.
+        </p>
+    </div>
+
+    <div class="footer-note">
+        <p>Prepared by Webbersaurus &bull; February 2025</p>
+    </div>
+
+</div>
+
+</body>
+</html>
