@@ -311,6 +311,85 @@
                 closeMobileMenu();
             }
         });
+
+        // Rate modal
+        if (openRateModalBtn) {
+            openRateModalBtn.addEventListener('click', openRateModal);
+        }
+
+        if (rateModalClose) {
+            rateModalClose.addEventListener('click', closeRateModal);
+        }
+
+        if (rateModal) {
+            rateModal.addEventListener('click', function(e) {
+                if (e.target === rateModal) {
+                    closeRateModal();
+                }
+            });
+        }
+
+        if (rateBtnHappy) {
+            rateBtnHappy.addEventListener('click', function() {
+                showRateStep('rateStepHappy');
+            });
+        }
+
+        if (rateBtnSad) {
+            rateBtnSad.addEventListener('click', function() {
+                showRateStep('rateStepNotHappy');
+            });
+        }
+
+        if (rateBackHappy) {
+            rateBackHappy.addEventListener('click', function() {
+                showRateStep('rateStep1');
+            });
+        }
+
+        if (rateBackNotHappy) {
+            rateBackNotHappy.addEventListener('click', function() {
+                showRateStep('rateStep1');
+            });
+        }
+
+        // Escape key closes rate modal (extend existing keyboard handler)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && rateModal && rateModal.classList.contains('active')) {
+                closeRateModal();
+            }
+        });
+    }
+
+    // =============================================
+    // Rate Your Experience Modal
+    // =============================================
+    const rateModal = document.getElementById('rateModal');
+    const openRateModalBtn = document.getElementById('openRateModal');
+    const rateModalClose = rateModal ? rateModal.querySelector('.rate-modal-close') : null;
+    const rateBtnHappy = document.getElementById('rateBtnHappy');
+    const rateBtnSad = document.getElementById('rateBtnSad');
+    const rateBackHappy = document.getElementById('rateBackHappy');
+    const rateBackNotHappy = document.getElementById('rateBackNotHappy');
+    const rateSteps = rateModal ? rateModal.querySelectorAll('.rate-step') : [];
+
+    function openRateModal() {
+        if (!rateModal) return;
+        showRateStep('rateStep1');
+        rateModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeRateModal() {
+        if (!rateModal) return;
+        rateModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function showRateStep(stepId) {
+        rateSteps.forEach(function(step) {
+            step.hidden = step.id !== stepId;
+        });
     }
 
     // =============================================
