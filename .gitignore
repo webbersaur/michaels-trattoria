@@ -10,3 +10,4 @@ Thumbs.db
 
 # Claude
 .claude/
+.vercel
