@@ -221,9 +221,18 @@
     // =============================================
 
     function initEventListeners() {
-        // Navbar scroll effect
-        window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-        window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+        // Navbar scroll effect (batched to avoid forced reflow)
+        let scrollTicking = false;
+        window.addEventListener('scroll', function() {
+            if (!scrollTicking) {
+                requestAnimationFrame(function() {
+                    handleNavbarScroll();
+                    updateActiveNavLink();
+                    scrollTicking = false;
+                });
+                scrollTicking = true;
+            }
+        }, { passive: true });
 
         // Mobile menu toggle
         if (navToggle) {
