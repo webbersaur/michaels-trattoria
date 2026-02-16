@@ -19,100 +19,19 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <!-- Fonts -->
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="michaels-restaurant-interior-dining-bar-area.webp" type="image/webp">
+
+    <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Schema.org markup for Local Business -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Restaurant",
-        "name": "Michael's Trattoria",
-        "image": "https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp",
-        "servesCuisine": "Italian",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "344 Center Street",
-            "addressLocality": "Wallingford",
-            "addressRegion": "CT",
-            "postalCode": "06492",
-            "addressCountry": "US"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 41.45450472150765,
-            "longitude": -72.81642369740187
-        },
-        "telephone": "(203) 269-5303",
-        "url": "https://michaelstrattoria.com",
-        "openingHours": ["Mo-Tu 16:00-22:00", "We-Th 11:30-22:00", "Fr-Sa 11:30-00:00", "Su 12:00-21:00"],
-        "acceptsReservations": true,
-        "menu": "https://michaelstrattoria.com/menu.html",
-        "sameAs": [
-            "https://www.facebook.com/MichaelsTrattoria",
-            "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/"
-        ],
-        "hasMenu": {
-            "@type": "Menu",
-            "name": "Michael's Trattoria Menu",
-            "url": "https://michaelstrattoria.com/menu.html",
-            "hasMenuSection": [
-                {
-                    "@type": "MenuSection",
-                    "name": "Signature Dishes",
-                    "hasMenuItem": [
-                        {
-                            "@type": "MenuItem",
-                            "name": "Filet Mignon",
-                            "description": "8-ounce Filet topped with a Portobello Mushroom Glaze Sauce served with Potato & Vegetable",
-                            "offers": { "@type": "Offer", "price": "48.95", "priceCurrency": "USD" }
-                        },
-                        {
-                            "@type": "MenuItem",
-                            "name": "Chicken Marsala",
-                            "description": "Sautéed in a Sweet Marsala Wine and Mushroom Sauce served over Penne",
-                            "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" }
-                        },
-                        {
-                            "@type": "MenuItem",
-                            "name": "Lobster Ravioli",
-                            "description": "Served with Shrimp in a Vodka Sauce",
-                            "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" }
-                        },
-                        {
-                            "@type": "MenuItem",
-                            "name": "Eggplant Parmesan",
-                            "description": "Michael's Legendary Housemade served over Penne",
-                            "offers": { "@type": "Offer", "price": "23.95", "priceCurrency": "USD" }
-                        }
-                    ]
-                }
-            ]
-        },
-        "potentialAction": {
-            "@type": "OrderAction",
-            "target": {
-                "@type": "EntryPoint",
-                "urlTemplate": "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/",
-                "actionPlatform": [
-                    "http://schema.org/DesktopWebPlatform",
-                    "http://schema.org/MobileWebPlatform"
-                ]
-            },
-            "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
-        },
-        "speakable": {
-            "@type": "SpeakableSpecification",
-            "cssSelector": [".hero-subtitle", ".about-content p"]
-        }
-    }
-    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -152,7 +71,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
-            <img src="michaels-restaurant-interior-dining-bar-area.webp" alt="Michael's Trattoria Italian restaurant dining room and bar in Wallingford CT" loading="eager">
+            <img src="michaels-restaurant-interior-dining-bar-area.webp" alt="Michael's Trattoria Italian restaurant dining room and bar in Wallingford CT" loading="eager" fetchpriority="high">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -529,5 +448,92 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+
+    <!-- Schema.org markup for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "Michael's Trattoria",
+        "image": "https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp",
+        "servesCuisine": "Italian",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "344 Center Street",
+            "addressLocality": "Wallingford",
+            "addressRegion": "CT",
+            "postalCode": "06492",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 41.45450472150765,
+            "longitude": -72.81642369740187
+        },
+        "telephone": "(203) 269-5303",
+        "url": "https://michaelstrattoria.com",
+        "openingHours": ["Mo-Tu 16:00-22:00", "We-Th 11:30-22:00", "Fr-Sa 11:30-00:00", "Su 12:00-21:00"],
+        "acceptsReservations": true,
+        "menu": "https://michaelstrattoria.com/menu.html",
+        "sameAs": [
+            "https://www.facebook.com/MichaelsTrattoria",
+            "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/"
+        ],
+        "hasMenu": {
+            "@type": "Menu",
+            "name": "Michael's Trattoria Menu",
+            "url": "https://michaelstrattoria.com/menu.html",
+            "hasMenuSection": [
+                {
+                    "@type": "MenuSection",
+                    "name": "Signature Dishes",
+                    "hasMenuItem": [
+                        {
+                            "@type": "MenuItem",
+                            "name": "Filet Mignon",
+                            "description": "8-ounce Filet topped with a Portobello Mushroom Glaze Sauce served with Potato & Vegetable",
+                            "offers": { "@type": "Offer", "price": "48.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Chicken Marsala",
+                            "description": "Sautéed in a Sweet Marsala Wine and Mushroom Sauce served over Penne",
+                            "offers": { "@type": "Offer", "price": "26.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Lobster Ravioli",
+                            "description": "Served with Shrimp in a Vodka Sauce",
+                            "offers": { "@type": "Offer", "price": "29.95", "priceCurrency": "USD" }
+                        },
+                        {
+                            "@type": "MenuItem",
+                            "name": "Eggplant Parmesan",
+                            "description": "Michael's Legendary Housemade served over Penne",
+                            "offers": { "@type": "Offer", "price": "23.95", "priceCurrency": "USD" }
+                        }
+                    ]
+                }
+            ]
+        },
+        "potentialAction": {
+            "@type": "OrderAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ]
+            },
+            "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"
+        },
+        "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero-subtitle", ".about-content p"]
+        }
+    }
+    </script>
 </body>
 </html>
