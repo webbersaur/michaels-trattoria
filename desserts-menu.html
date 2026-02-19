@@ -12,16 +12,17 @@
       gtag('config', 'G-HGC476RN0K');
     </script>
     <meta name="description" content="Michael's Trattoria desserts and specialty coffees - housemade Italian desserts, cannoli, cheesecake, and cocktail coffees. Italian restaurant in Wallingford, CT.">
-    <title>Desserts Menu | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
+    <title>Desserts | Michael's Trattoria - Wallingford CT</title>
 
     <!-- Canonical & Open Graph -->
     <link rel="canonical" href="https://michaelstrattoria.com/desserts-menu.html">
-    <meta property="og:title" content="Desserts Menu | Michael's Trattoria - Italian Restaurant Wallingford CT">
+    <meta property="og:title" content="Desserts | Michael's Trattoria - Wallingford CT">
     <meta property="og:description" content="Michael's Trattoria desserts and specialty coffees - housemade Italian desserts, cannoli, cheesecake, and cocktail coffees. Italian restaurant in Wallingford, CT.">
     <meta property="og:url" content="https://michaelstrattoria.com/desserts-menu.html">
     <meta property="og:type" content="restaurant.restaurant">
     <meta property="og:image" content="https://michaelstrattoria.com/michaels-restaurant-interior-dining-bar-area.webp">
     <meta property="og:site_name" content="Michael's Trattoria">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -30,11 +31,14 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <!-- Styles (non-render-blocking) -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/menu.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/styles.css"><link rel="stylesheet" href="css/menu.css"></noscript>
 
     <!-- Menu Schema -->
     <script type="application/ld+json">
@@ -45,8 +49,7 @@
         "url": "https://michaelstrattoria.com/desserts-menu.html",
         "mainEntity": {
             "@type": "Restaurant",
-            "name": "Michael's Trattoria",
-            "url": "https://michaelstrattoria.com"
+            "@id": "https://michaelstrattoria.com/#restaurant"
         },
         "hasMenuSection": [
             {
@@ -72,6 +75,17 @@
                     { "@type": "MenuItem", "name": "Cointreau Coffee", "description": "Cointreau & fresh brewed coffee topped with whipped cream" }
                 ]
             }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://michaelstrattoria.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Menus", "item": "https://michaelstrattoria.com/menu.html" },
+            { "@type": "ListItem", "position": 3, "name": "Desserts", "item": "https://michaelstrattoria.com/desserts-menu.html" }
         ]
     }
     </script>
@@ -114,8 +128,15 @@
 
     <!-- Menu Hero -->
     <section class="menu-hero">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">&rsaquo;</span>
+            <a href="menu.html">Menus</a>
+            <span class="separator">&rsaquo;</span>
+            <span>Desserts</span>
+        </nav>
         <div class="menu-hero-content">
-            <h1 class="menu-hero-subtitle">DESSERTS &amp; COFFEES</h1>
+            <h1 class="menu-hero-subtitle">MICHAEL'S TRATTORIA DESSERTS &amp; COFFEES</h1>
         </div>
     </section>
 
@@ -267,6 +288,18 @@
         </div>
     </main>
 
+    <!-- Browse Other Menus -->
+    <section class="browse-other-menus">
+        <h2>Browse Other Menus</h2>
+        <div class="browse-menus-grid">
+            <a href="dinner-menu.html">Dinner</a>
+            <a href="lunch-menu.html">Lunch</a>
+            <a href="pizza-menu.html">Pizza</a>
+            <a href="wine-menu.html">Wine</a>
+            <a href="catering-menu.html">Catering</a>
+        </div>
+    </section>
+
     <!-- Menu Footer Info -->
     <section class="menu-footer-info">
         <div class="container">
@@ -295,12 +328,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2025 Michael's Trattoria. All rights reserved.</p>
+                <p>&copy; 2026 Michael's Trattoria. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>
