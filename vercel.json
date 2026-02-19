@@ -21,6 +21,7 @@
     { "source": "/contact", "destination": "/#contact", "permanent": true },
     { "source": "/specials/", "destination": "/", "permanent": true },
     { "source": "/specials", "destination": "/", "permanent": true },
-    { "source": "/private-events/", "destination": "/private-events", "permanent": true }
+    { "source": "/private-events/", "destination": "/private-parties", "permanent": true },
+    { "source": "/private-events", "destination": "/private-parties", "permanent": true }
   ]
 }
