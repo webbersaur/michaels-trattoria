@@ -22,10 +22,10 @@ There are no tests, linters, or build steps.
 ## Architecture
 
 ### Pages (9 HTML files)
-- `index.html` — Homepage (hero, about, featured dishes, gallery, lightbox, private events CTA, rate modal, contact/hours)
+- `index.html` — Homepage (hero, about, featured dishes, gallery, lightbox, private parties CTA, rate modal, contact/hours)
 - `menu.html` — Hub page linking to 6 sub-menus
 - `dinner-menu.html`, `lunch-menu.html`, `pizza-menu.html`, `desserts-menu.html`, `wine-menu.html`, `catering-menu.html` — Individual menu pages
-- `private-events.html` — Private dining room info (10-40 guests), FAQ section with FAQPage schema
+- `private-parties.html` — Private parties page with 4 dining rooms (16-75 guests), room cards, FAQ section with FAQPage schema
 
 ### CSS (2 files, no preprocessor)
 - `css/styles.css` (~1,400 lines) — Full site: reset, nav, hero, about, gallery, lightbox, events, contact, footer, rate modal, animations, responsive breakpoints (1024/768/480px)
@@ -74,7 +74,7 @@ Every page has: meta description, canonical URL, Open Graph tags, `twitter:card`
 - `index.html` — `Restaurant` (with `@id: #restaurant`) including address, geo, hours, hasMenu (MenuSection/MenuItem with prices), OrderAction (DoorDash), SpeakableSpecification
 - Menu pages — `Menu` with `hasMenuSection` arrays containing every `MenuItem` (name, description, price). `mainEntity` references the Restaurant `@id`.
 - `menu.html` — `ItemList` with 6 `ListItem` entries linking to sub-menus
-- `private-events.html` — `Restaurant` with `amenityFeature` array, `maximumAttendeeCapacity`, SpeakableSpecification, plus `FAQPage` schema with 12 questions
+- `private-parties.html` — `Restaurant` with `amenityFeature` array (4 rooms), `maximumAttendeeCapacity: 75`, SpeakableSpecification, plus `FAQPage` schema with 12 questions
 - All sub-pages — `BreadcrumbList` schema
 
 When adding/editing menu items in HTML, also update the corresponding JSON-LD block to stay in sync.
@@ -114,4 +114,4 @@ All sub-pages share this common structure:
 - **Breadcrumbs:** All sub-pages have `<nav class="breadcrumb" aria-label="Breadcrumb">` inside the hero section. Menu sub-pages use 3-level breadcrumbs (Home → Menus → Page).
 - **FAQ accordion:** Uses native `<details>`/`<summary>` elements with CSS-only +/− toggle animation.
 - **Sitemap:** Update `<lastmod>` dates when modifying pages.
-- **Internal links:** All internal links use clean URLs (e.g., `href="/menu"`, `href="/dinner-menu"`, `href="/private-events"`). Homepage links use `href="/"`. Canonical, OG, JSON-LD, and sitemap URLs also use clean format. Each menu sub-page cross-links to all other menus via "Browse Other Menus" section.
+- **Internal links:** All internal links use clean URLs (e.g., `href="/menu"`, `href="/dinner-menu"`, `href="/private-parties"`). Homepage links use `href="/"`. Canonical, OG, JSON-LD, and sitemap URLs also use clean format. Each menu sub-page cross-links to all other menus via "Browse Other Menus" section.
