@@ -37,7 +37,7 @@ There are no tests, linters, or build steps.
 - `js/main.js` (~420 lines) — IIFE with: navbar scroll/mobile toggle, dropdown menus, lightbox gallery (keyboard-accessible, circular nav), IntersectionObserver fade-in animations, rate-your-experience modal (happy → review links, sad → Formspree feedback form), smooth scroll to anchors.
 
 ### Config & SEO Files
-- `vercel.json` — 27 permanent 301 redirects from old WordPress directory URLs (e.g., `/dinner/` → `/dinner-menu.html`). Both trailing-slash and non-trailing-slash variants.
+- `vercel.json` — `cleanUrls: true` for extension-free URLs (Vercel auto-redirects `.html` → clean). 22 permanent 301 redirects from old WordPress directory URLs (e.g., `/dinner/` → `/dinner-menu`).
 - `sitemap.xml` — 10 URLs (9 pages + llms.txt) with lastmod dates and priority levels
 - `robots.txt` — Allow all, disallows report files, links to sitemap
 - `llms.txt` — Structured business info for LLM discovery
@@ -114,4 +114,4 @@ All sub-pages share this common structure:
 - **Breadcrumbs:** All sub-pages have `<nav class="breadcrumb" aria-label="Breadcrumb">` inside the hero section. Menu sub-pages use 3-level breadcrumbs (Home → Menus → Page).
 - **FAQ accordion:** Uses native `<details>`/`<summary>` elements with CSS-only +/− toggle animation.
 - **Sitemap:** Update `<lastmod>` dates when modifying pages.
-- **Internal links:** Homepage footer "Menu" links to `menu.html`. Private events page links to catering menu. Each menu sub-page cross-links to all other menus via "Browse Other Menus" section.
+- **Internal links:** All internal links use clean URLs (e.g., `href="/menu"`, `href="/dinner-menu"`, `href="/private-events"`). Homepage links use `href="/"`. Canonical, OG, JSON-LD, and sitemap URLs also use clean format. Each menu sub-page cross-links to all other menus via "Browse Other Menus" section.
