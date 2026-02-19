@@ -25,11 +25,11 @@ There are no tests, linters, or build steps.
 - `index.html` — Homepage (hero, about, featured dishes, gallery, lightbox, private events CTA, rate modal, contact/hours)
 - `menu.html` — Hub page linking to 6 sub-menus
 - `dinner-menu.html`, `lunch-menu.html`, `pizza-menu.html`, `desserts-menu.html`, `wine-menu.html`, `catering-menu.html` — Individual menu pages
-- `private-events.html` — Private dining room info (10-40 guests)
+- `private-events.html` — Private dining room info (10-40 guests), FAQ section with FAQPage schema
 
 ### CSS (2 files, no preprocessor)
 - `css/styles.css` (~1,400 lines) — Full site: reset, nav, hero, about, gallery, lightbox, events, contact, footer, rate modal, animations, responsive breakpoints (1024/768/480px)
-- `css/menu.css` (~490 lines) — Menu pages: hero, category nav, menu items, landing grid, events page layout, footer info
+- `css/menu.css` (~560 lines) — Menu pages: breadcrumbs, browse-other-menus, hero, category nav, menu items, landing grid, events page layout, FAQ accordion, footer info
 
 **Theming via CSS custom properties** on `:root`: dark background (`#1a1a1a`), gold accents (`#c9a96e`), three font families (`--font-script`, `--font-heading`, `--font-body`), spacing scale, transition speeds.
 
@@ -37,28 +37,67 @@ There are no tests, linters, or build steps.
 - `js/main.js` (~420 lines) — IIFE with: navbar scroll/mobile toggle, dropdown menus, lightbox gallery (keyboard-accessible, circular nav), IntersectionObserver fade-in animations, rate-your-experience modal (happy → review links, sad → Formspree feedback form), smooth scroll to anchors.
 
 ### Config & SEO Files
-- `vercel.json` — 301 redirects from old WordPress directory URLs (e.g., `/dinner/` → `/dinner-menu.html`)
-- `sitemap.xml` — All pages with lastmod dates and priority levels
-- `robots.txt` — Allow all, links to sitemap
+- `vercel.json` — 27 permanent 301 redirects from old WordPress directory URLs (e.g., `/dinner/` → `/dinner-menu.html`). Both trailing-slash and non-trailing-slash variants.
+- `sitemap.xml` — 10 URLs (9 pages + llms.txt) with lastmod dates and priority levels
+- `robots.txt` — Allow all, disallows report files, links to sitemap
 - `llms.txt` — Structured business info for LLM discovery
+
+### Internal Report Files (not indexed)
+- `seo-rankings-report.html` — Client-facing SEO rankings tracker (has `noindex, nofollow` meta tag)
+- `seo-assessment.html` — SEO audit assessment
+- `work-report.html` — Development work log
+
+All three are blocked in `robots.txt` and excluded from `sitemap.xml`.
+
+## Performance Patterns
+
+The homepage and sub-pages use different loading strategies:
+
+**Homepage (`index.html`):**
+- Critical CSS inlined in `<style>` tag (navbar, hero, buttons, layout primitives)
+- Full `styles.css` loaded non-render-blocking: `media="print" onload="this.media='all'"` with `<noscript>` fallback
+- LCP image preloaded: `<link rel="preload" as="image" ...>`
+- Hero image uses `loading="eager" fetchpriority="high"`
+- JS loaded with `defer`
+
+**All sub-pages (menu, events):**
+- Fonts loaded non-render-blocking with same `media="print" onload` pattern + `<noscript>` fallback
+- Both `styles.css` and `menu.css` loaded non-render-blocking with same pattern
+- JS loaded with `defer`
+- No inlined critical CSS (relies on async loading)
 
 ## Schema & SEO Patterns
 
-Every page has: meta description, canonical URL, Open Graph tags (title, description, url, type, image, site_name), and favicon links.
+Every page has: meta description, canonical URL, Open Graph tags, `twitter:card` meta tag, and favicon links.
 
 **JSON-LD structured data** varies by page:
-- `index.html` — `Restaurant` with address, geo, hours, hasMenu (MenuSection/MenuItem with prices), OrderAction (DoorDash), SpeakableSpecification
-- Menu pages — `Menu` with `hasMenuSection` arrays containing every `MenuItem` (name, description, price)
+- `index.html` — `Restaurant` (with `@id: #restaurant`) including address, geo, hours, hasMenu (MenuSection/MenuItem with prices), OrderAction (DoorDash), SpeakableSpecification
+- Menu pages — `Menu` with `hasMenuSection` arrays containing every `MenuItem` (name, description, price). `mainEntity` references the Restaurant `@id`.
 - `menu.html` — `ItemList` with 6 `ListItem` entries linking to sub-menus
-- `private-events.html` — `Restaurant` with `amenityFeature` array, `maximumAttendeeCapacity`, SpeakableSpecification
+- `private-events.html` — `Restaurant` with `amenityFeature` array, `maximumAttendeeCapacity`, SpeakableSpecification, plus `FAQPage` schema with 12 questions
+- All sub-pages — `BreadcrumbList` schema
 
 When adding/editing menu items in HTML, also update the corresponding JSON-LD block to stay in sync.
+
+**Google integrations:** GA4 (`G-HGC476RN0K`) and Site Verification (`uEe5-TNKQqWojQrGLuxkLwjym9q5Pc6-8KDgQpMw7Ks`) on all pages.
+
+## Sub-Page Structure
+
+All sub-pages share this common structure:
+1. `<head>`: gtag → meta description → title → canonical + OG + twitter:card → favicon → font preconnect/preload → async CSS → JSON-LD schemas → site verification
+2. `<nav class="navbar scrolled">` (pre-scrolled dark state, unlike homepage which scrolls dynamically)
+3. `<section class="menu-hero">` with breadcrumb nav inside, then h1
+4. Main content area
+5. "Browse Other Menus" cross-link section (menu pages only — excludes the current page from links)
+6. Footer info section (location, contact, hours)
+7. Copyright footer
+8. `<script src="js/main.js" defer>`
 
 ## Conventions
 
 - **Images:** All WebP, named with lowercase hyphenated SEO keywords (e.g., `filet-mignon-mushroom-gravy-mashed-potatoes.webp`). All non-hero images use `loading="lazy"`.
 - **Responsive:** Mobile-first with `clamp()` for fluid typography. Breakpoints at 1024px, 768px, 480px.
-- **Accessibility:** ARIA labels on interactive elements (modals, lightbox, hamburger), semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<address>`), keyboard navigation support.
+- **Accessibility:** ARIA labels on interactive elements (modals, lightbox, hamburger), semantic HTML, keyboard navigation support.
 - **Animations:** `.fade-in` class + IntersectionObserver (0.1 threshold) for scroll-triggered reveals.
 - **Menu item HTML pattern:**
   ```html
@@ -70,6 +109,9 @@ When adding/editing menu items in HTML, also update the corresponding JSON-LD bl
       <p class="menu-item-description">Description text</p>
   </div>
   ```
-- **Nav:** All sub-pages use `class="navbar scrolled"` (pre-scrolled state). Homepage nav scrolls dynamically.
+- **Nav:** All sub-pages use `class="navbar scrolled"` (pre-scrolled state). Homepage nav scrolls dynamically at 50px threshold.
 - **Forms:** Formspree (`https://formspree.io/f/xdkogpyn`) for the feedback form in the rate modal.
+- **Breadcrumbs:** All sub-pages have `<nav class="breadcrumb" aria-label="Breadcrumb">` inside the hero section. Menu sub-pages use 3-level breadcrumbs (Home → Menus → Page).
+- **FAQ accordion:** Uses native `<details>`/`<summary>` elements with CSS-only +/− toggle animation.
 - **Sitemap:** Update `<lastmod>` dates when modifying pages.
+- **Internal links:** Homepage footer "Menu" links to `menu.html`. Private events page links to catering menu. Each menu sub-page cross-links to all other menus via "Browse Other Menus" section.

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /seo-rankings-report.html
-Disallow: /seo-assessment.html
-Disallow: /work-report.html
+Disallow: /seo-rankings-report
+Disallow: /seo-assessment
+Disallow: /work-report
 Sitemap: https://michaelstrattoria.com/sitemap.xml

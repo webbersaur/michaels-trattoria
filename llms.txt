@@ -76,14 +76,14 @@ Available through DoorDash: https://www.doordash.com/store/michael's-trattoria-w
 ## Pages
 
 - Home: https://michaelstrattoria.com/
-- Menus: https://michaelstrattoria.com/menu.html
-- Dinner Menu: https://michaelstrattoria.com/dinner-menu.html
-- Lunch Menu: https://michaelstrattoria.com/lunch-menu.html
-- Pizza Menu: https://michaelstrattoria.com/pizza-menu.html
-- Desserts Menu: https://michaelstrattoria.com/desserts-menu.html
-- Wine Menu: https://michaelstrattoria.com/wine-menu.html
-- Catering Menu: https://michaelstrattoria.com/catering-menu.html
-- Private Events: https://michaelstrattoria.com/private-events.html
+- Menus: https://michaelstrattoria.com/menu
+- Dinner Menu: https://michaelstrattoria.com/dinner-menu
+- Lunch Menu: https://michaelstrattoria.com/lunch-menu
+- Pizza Menu: https://michaelstrattoria.com/pizza-menu
+- Desserts Menu: https://michaelstrattoria.com/desserts-menu
+- Wine Menu: https://michaelstrattoria.com/wine-menu
+- Catering Menu: https://michaelstrattoria.com/catering-menu
+- Private Events: https://michaelstrattoria.com/private-events
 
 ## FAQs
 
