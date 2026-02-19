@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>SEO Rankings Report — Michael's Trattoria</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: #f5f5f0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        /* Header */
+        .report-header {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 48px 0;
+        }
+        .report-header .container {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .report-header h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .gold { color: #c9a96e; }
+        .report-header .subtitle {
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 16px;
+        }
+        .report-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+        .report-meta strong { color: #ccc; }
+        .report-meta a { color: #c9a96e; text-decoration: none; }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 32px 0;
+        }
+        .summary-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        .summary-card .label {
+            font-size: 0.8rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        .rank-green { color: #2e7d32; }
+        .rank-yellow { color: #c9a96e; }
+        .rank-red { color: #c62828; }
+
+        /* Sections */
+        .section {
+            background: #fff;
+            border-radius: 8px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #c9a96e;
+        }
+        .section h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: #333;
+        }
+        .section h3:first-of-type { margin-top: 0; }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 24px;
+            font-size: 0.9rem;
+        }
+        th {
+            text-align: left;
+            font-weight: 600;
+            padding: 10px 12px;
+            background: #f8f8f5;
+            border-bottom: 2px solid #e0e0e0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #666;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        tr.highlight {
+            background: #fdf8ef;
+            font-weight: 600;
+        }
+        tr.highlight td { border-bottom-color: #c9a96e; }
+
+        /* Ranking Badge */
+        .rank-badge {
+            display: inline-block;
+            min-width: 32px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: #fff;
+        }
+        .rank-badge.top3 { background: #2e7d32; }
+        .rank-badge.top10 { background: #c9a96e; }
+        .rank-badge.notfound { background: #bbb; color: #fff; font-size: 0.75rem; }
+
+        /* Keyword Summary Table */
+        .keyword-table td:nth-child(2) { white-space: nowrap; }
+
+        /* Change Indicator */
+        .change { font-size: 0.8rem; margin-left: 6px; }
+        .change.up { color: #2e7d32; }
+        .change.down { color: #c62828; }
+        .change.new { color: #666; font-style: italic; }
+
+        /* Timeline */
+        .timeline-entry {
+            border-left: 3px solid #c9a96e;
+            padding: 16px 0 16px 20px;
+            margin-left: 12px;
+            position: relative;
+        }
+        .timeline-entry::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 20px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #c9a96e;
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #c9a96e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .timeline-content {
+            margin-top: 4px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .timeline-content ul {
+            margin: 6px 0 0 18px;
+            list-style: disc;
+        }
+        .timeline-content li { margin-bottom: 4px; }
+
+        /* Notes */
+        .note {
+            background: #fdf8ef;
+            border-left: 3px solid #c9a96e;
+            padding: 12px 16px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* Footer */
+        .report-footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* Print */
+        @media print {
+            body { background: #fff; }
+            .section { box-shadow: none; border: 1px solid #eee; }
+            .report-header { background: #1a1a1a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container { padding: 24px 16px; }
+            .section { padding: 20px 16px; }
+            table { font-size: 0.8rem; }
+            th, td { padding: 8px; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="report-header">
+        <div class="container">
+            <h1>SEO Rankings Report — <span class="gold">Michael's Trattoria</span></h1>
+            <p class="subtitle">Organic Search Performance Tracking</p>
+            <div class="report-meta">
+                <span><strong>Website:</strong> <a href="https://michaelstrattoria.com" target="_blank">michaelstrattoria.com</a></span>
+                <span><strong>Location:</strong> 344 Center Street, Wallingford, CT 06492</span>
+                <span><strong>Report Started:</strong> February 19, 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- Snapshot Summary -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="number rank-green">#2</div>
+                <div class="label">Italian Food<br>Wallingford CT</div>
+            </div>
+            <div class="summary-card">
+                <div class="number rank-green">#3</div>
+                <div class="label">Italian Restaurants<br>Wallingford CT</div>
+            </div>
+            <div class="summary-card">
+                <div class="number rank-yellow">#6</div>
+                <div class="label">Best Italian Restaurant<br>Wallingford CT</div>
+            </div>
+            <div class="summary-card">
+                <div class="number" style="color:#bbb;">—</div>
+                <div class="label">Private Parties<br>Wallingford CT</div>
+            </div>
+        </div>
+
+        <!-- Current Rankings -->
+        <div class="section">
+            <h2>Current Keyword Rankings</h2>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:16px;">Last checked: <strong>February 19, 2026</strong></p>
+
+            <table class="keyword-table">
+                <thead>
+                    <tr>
+                        <th>Target Keyword</th>
+                        <th>Position</th>
+                        <th>Top Competitor</th>
+                        <th>Trend</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>italian food wallingford ct</strong></td>
+                        <td><span class="rank-badge top3">#2</span></td>
+                        <td>Serafino's (#1)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>italian restaurants wallingford ct</strong></td>
+                        <td><span class="rank-badge top3">#3</span></td>
+                        <td>Serafino's (#1), Favio's (#2)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>best italian restaurant wallingford ct</strong></td>
+                        <td><span class="rank-badge top10">#6</span></td>
+                        <td>Serafino's (#1), Favio's (#2)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>restaurants wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td>TripAdvisor (#1), Yelp (#2)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>private parties wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td>Eventective (#1), Terrace on the Green (#2)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>private dining wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td>Terrace on the Green (#1), Serafino's (#3)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>catering wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td>Bourassa Catering (#1), The Eatery (#2)</td>
+                        <td><span class="change new">Baseline</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="note">
+                <strong>How to read this table:</strong> Green badges = page 1, top 3. Gold = page 1, positions 4-10. Gray "10+" = not found in the first page of Google results. "Baseline" means this is the first measurement — future reports will show directional change (arrows up/down).
+            </div>
+        </div>
+
+        <!-- Detailed Rankings by Keyword -->
+        <div class="section">
+            <h2>Detailed Organic Results by Keyword</h2>
+
+            <h3>1. "italian food wallingford ct" — <span class="gold">Position #2</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr class="highlight"><td>2</td><td>Michael's Trattoria</td><td>michaelstrattoria.com</td></tr>
+                    <tr><td>3</td><td>Fratelli's Pizzeria</td><td>fratellipizzact.com</td></tr>
+                    <tr><td>4</td><td>Napoli Pizza Restaurant</td><td>napolipizzarestaurant.com</td></tr>
+                    <tr><td>5</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
+                    <tr><td>6</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>7</td><td>Hometown Pizza</td><td>hometownpizzawlfd.com</td></tr>
+                    <tr><td>8</td><td>Christos Restaurant & Bar</td><td>christospizzawlfd.com</td></tr>
+                    <tr><td>9</td><td>Yelp - La Piazza</td><td>yelp.com</td></tr>
+                    <tr><td>10</td><td>OpenTable - Favio's</td><td>opentable.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>2. "italian restaurants wallingford ct" — <span class="gold">Position #3</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>2</td><td>Favio's Trattoria</td><td>faviostrattoria.com</td></tr>
+                    <tr class="highlight"><td>3</td><td>Michael's Trattoria</td><td>michaelstrattoria.com</td></tr>
+                    <tr><td>4</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
+                    <tr><td>5</td><td>Fratelli's Pizzeria</td><td>fratellipizzact.com</td></tr>
+                    <tr><td>6</td><td>Napoli Pizza Restaurant</td><td>napolipizzarestaurant.com</td></tr>
+                    <tr><td>7</td><td>La Piazza Restaurant</td><td>restaurants-world.com</td></tr>
+                    <tr><td>8</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>9</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>10</td><td>Christos Restaurant & Bar</td><td>christospizzawlfd.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>3. "best italian restaurant wallingford ct" — <span class="gold">Position #6</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>2</td><td>Favio's Trattoria</td><td>faviostrattoria.com</td></tr>
+                    <tr><td>3</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
+                    <tr><td>4</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>5</td><td>Fratelli's Pizzeria</td><td>fratellipizzact.com</td></tr>
+                    <tr class="highlight"><td>6</td><td>Michael's Trattoria</td><td>michaelstrattoria.com</td></tr>
+                    <tr><td>7</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>8</td><td>Wanderlog</td><td>wanderlog.com</td></tr>
+                    <tr><td>9</td><td>Hometown Pizza</td><td>hometownpizzawlfd.com</td></tr>
+                    <tr><td>10</td><td>Yellow Pages</td><td>yellowpages.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>4. "restaurants wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
+                    <tr><td>2</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>3</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>4</td><td>Gaetano's Tavern on Main</td><td>gaetanostavern.com</td></tr>
+                    <tr><td>5</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>6</td><td>99 Restaurants</td><td>99restaurants.com</td></tr>
+                    <tr><td>7</td><td>Terrace on the Green</td><td>terracect.com</td></tr>
+                    <tr><td>8</td><td>Knuckleheads Taproom</td><td>knuckleheadstaproom.com</td></tr>
+                    <tr><td>9</td><td>Cranky Coqui</td><td>crankycoqui.com</td></tr>
+                    <tr><td>10</td><td>Yelp (2nd listing)</td><td>yelp.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>5. "private parties wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Eventective</td><td>eventective.com</td></tr>
+                    <tr><td>2</td><td>Terrace on the Green</td><td>terracect.com</td></tr>
+                    <tr><td>3</td><td>Punchbowl</td><td>punchbowl.com</td></tr>
+                    <tr><td>4</td><td>Swimply</td><td>swimply.com</td></tr>
+                    <tr><td>5</td><td>Toyota Oakdale Theatre</td><td>toyotaoakdaletheatre.com</td></tr>
+                    <tr><td>6</td><td>PartySlate</td><td>partyslate.com</td></tr>
+                    <tr><td>7</td><td>PNA Park Lodge 513</td><td>pnapark.com</td></tr>
+                    <tr><td>8</td><td>Bourassa Catering</td><td>bourassacatering.com</td></tr>
+                    <tr><td>9</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>10</td><td>Sliders Grill & Bar</td><td>slidersgrillbar.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>6. "private dining wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Terrace on the Green</td><td>terracect.com</td></tr>
+                    <tr><td>2</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>3</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>4</td><td>Wallingford Country Club</td><td>wallingfordcc.com</td></tr>
+                    <tr><td>5</td><td>Colony Diner</td><td>colonydiner.com</td></tr>
+                    <tr><td>6</td><td>619 Supper Club</td><td>sixoneninewlfd.com</td></tr>
+                    <tr><td>7</td><td>Seasons at the Tradition</td><td>seasonsatthetradition.com</td></tr>
+                    <tr><td>8</td><td>Sliders Grill & Bar</td><td>slidersgrillbar.com</td></tr>
+                    <tr><td>9</td><td>Double Play Cafe</td><td>doubleplaycafe.com</td></tr>
+                    <tr><td>10</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
+                </tbody>
+            </table>
+
+            <h3>7. "catering wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
+            <table>
+                <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
+                <tbody>
+                    <tr><td>1</td><td>Bourassa Catering</td><td>bourassacatering.com</td></tr>
+                    <tr><td>2</td><td>The Eatery of Wallingford</td><td>wallingfordeatery.com</td></tr>
+                    <tr><td>3</td><td>Rosa's Deli</td><td>rosasdeli.com</td></tr>
+                    <tr><td>4</td><td>Fratelli's Pizzeria</td><td>fratellipizzact.com</td></tr>
+                    <tr><td>5</td><td>East Center Market</td><td>eastcentermarket.com</td></tr>
+                    <tr><td>6</td><td>CT Fresh Food & Produce</td><td>ctfreshfoodandproduce.com</td></tr>
+                    <tr><td>7</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>8</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>9</td><td>Dad's Wallingford</td><td>dadswallingford.com</td></tr>
+                    <tr><td>10</td><td>Gaetano's Tavern</td><td>gaetanostavern.com</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Work Completed -->
+        <div class="section">
+            <h2>Optimization Work Log</h2>
+
+            <div class="timeline-entry">
+                <div class="timeline-date">February 19, 2026 — On-Site SEO Audit & Fixes</div>
+                <div class="timeline-content">
+                    <p>Completed comprehensive on-site SEO audit and implemented fixes across all 9 pages:</p>
+                    <ul>
+                        <li><strong>H1 tags fixed:</strong> menu.html H1 changed from decorative "Come and Experience" to keyword-rich "OUR MENUS." All 6 menu sub-pages now include brand name in H1 (e.g., "MICHAEL'S TRATTORIA DINNER MENU").</li>
+                        <li><strong>Title tags optimized:</strong> Shortened 3 over-length titles to under 60 characters for proper SERP display.</li>
+                        <li><strong>Meta descriptions trimmed:</strong> 5 descriptions shortened to under 160 chars with CTAs added.</li>
+                        <li><strong>Page speed improved:</strong> Added <code>defer</code> to JavaScript and converted fonts + CSS to non-render-blocking async loading on all 8 sub-pages (matching homepage pattern).</li>
+                        <li><strong>Breadcrumb navigation added:</strong> Visual breadcrumbs on all sub-pages + BreadcrumbList JSON-LD schema for rich results eligibility.</li>
+                        <li><strong>Internal linking strengthened:</strong> "Browse Other Menus" cross-link section on all 6 menu pages. Fixed homepage footer menu link. Added catering menu link to private events page.</li>
+                        <li><strong>Schema improvements:</strong> Added <code>@id</code> to Restaurant entity for connected knowledge graph. Updated all Menu schemas to reference it. Added <code>twitter:card</code> meta tags site-wide.</li>
+                        <li><strong>Housekeeping:</strong> Updated copyright to 2026. Updated sitemap lastmod dates.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Future entries will be added here -->
+
+        </div>
+
+        <!-- Competitor Analysis -->
+        <div class="section">
+            <h2>Key Competitors</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Competitor</th>
+                        <th>Strongest Keywords</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Serafino's Restaurant</strong><br><span style="color:#999; font-size:0.8rem;">serafinorestaurant.com</span></td>
+                        <td>#1 for 4 of 5 Italian keywords</td>
+                        <td>"Voted Best Italian Food" — strong authority signals, also ranks for catering (#8) and private dining (#3)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Favio's Trattoria</strong><br><span style="color:#999; font-size:0.8rem;">faviostrattoria.com</span></td>
+                        <td>#2 for Italian restaurants, best Italian</td>
+                        <td>Consistent #2 behind Serafino's for Italian keywords. Direct "trattoria" competitor.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terrace on the Green</strong><br><span style="color:#999; font-size:0.8rem;">terracect.com</span></td>
+                        <td>#1 for private dining, #2 for private parties</td>
+                        <td>Dedicated /private-events page. Dominates event/party keywords in Wallingford.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fratelli's Pizzeria</strong><br><span style="color:#999; font-size:0.8rem;">fratellipizzact.com</span></td>
+                        <td>#5 for Italian restaurants, #4 for catering</td>
+                        <td>Ranks for both Italian dining and catering with dedicated /catering page.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sliders Grill & Bar</strong><br><span style="color:#999; font-size:0.8rem;">slidersgrillbar.com</span></td>
+                        <td>#10 for private parties, #8 for private dining</td>
+                        <td>Dedicated /private-parties/ page with named rooms and capacity info.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Opportunities -->
+        <div class="section">
+            <h2>Next Opportunities</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Opportunity</th>
+                        <th>Target Keywords</th>
+                        <th>Expected Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="rank-badge top3" style="font-size:0.7rem;">HIGH</span></td>
+                        <td><strong>Expand private events page content</strong> — add FAQs, capacity details, sample menus, testimonials, event type pages</td>
+                        <td>private parties wallingford ct, private dining wallingford ct</td>
+                        <td>Move from 10+ to top 10</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge top3" style="font-size:0.7rem;">HIGH</span></td>
+                        <td><strong>Google Business Profile optimization</strong> — more photos, weekly posts, review generation strategy</td>
+                        <td>All local keywords + map pack</td>
+                        <td>Local pack visibility for all keywords</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge top10" style="font-size:0.7rem;">MED</span></td>
+                        <td><strong>Get listed on venue directories</strong> — Eventective, PartySlate, Punchbowl for private events</td>
+                        <td>private parties wallingford ct</td>
+                        <td>Indirect visibility via directories</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge top10" style="font-size:0.7rem;">MED</span></td>
+                        <td><strong>Build local citations & backlinks</strong> — Wallingford Chamber, local food blogs, CT dining guides</td>
+                        <td>All keywords</td>
+                        <td>Move Italian restaurants from #3 to #2</td>
+                    </tr>
+                    <tr>
+                        <td><span class="rank-badge notfound" style="font-size:0.7rem;">LOW</span></td>
+                        <td><strong>TripAdvisor / Yelp / OpenTable presence</strong> — ensure profiles are claimed, complete, and driving reviews</td>
+                        <td>restaurants wallingford ct, best italian restaurant</td>
+                        <td>Indirect visibility via aggregators</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="report-footer">
+        <p>Prepared by Webbersaurus Web Development &bull; <a href="https://webbersaur.us" style="color:#c9a96e; text-decoration:none;">webbersaur.us</a></p>
+    </div>
+
+</body>
+</html>
