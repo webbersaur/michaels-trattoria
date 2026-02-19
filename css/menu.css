@@ -476,6 +476,48 @@ h1.menu-hero-subtitle {
     margin-top: var(--spacing-md);
 }
 
+/* Room Cards */
+.rooms-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+}
+
+.room-card {
+    background: rgba(201, 169, 110, 0.06);
+    border: 1px solid rgba(201, 169, 110, 0.15);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.room-capacity {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.room-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.room-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
 .events-cta-block {
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
@@ -634,5 +676,9 @@ details[open] .faq-question::after {
     h1.menu-hero-subtitle {
         font-size: 1.25rem;
         letter-spacing: 5px;
+    }
+
+    .rooms-grid {
+        grid-template-columns: 1fr;
     }
 }
