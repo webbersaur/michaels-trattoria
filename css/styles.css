@@ -1269,6 +1269,10 @@ address {
         --nav-height: 70px;
     }
 
+    .nav-logo {
+        padding: 1.5rem 0 0.5rem;
+    }
+
     .nav-menu {
         position: fixed;
         top: 0;
