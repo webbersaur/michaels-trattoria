@@ -230,7 +230,7 @@ address {
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    padding: 0.5rem 0;
+    padding: 1rem 0 0.5rem;
 }
 
 .logo-text {
