@@ -234,7 +234,7 @@ address {
 
 .logo-text {
     font-family: var(--font-script);
-    font-size: 2.74rem;
+    font-size: 5.48rem;
     font-weight: 700;
     color: var(--color-gold);
     line-height: 1;
@@ -242,7 +242,7 @@ address {
 
 .logo-subtext {
     font-family: var(--font-body);
-    font-size: 0.78rem;
+    font-size: 1.56rem;
     font-weight: 400;
     letter-spacing: 4px;
     text-transform: uppercase;
