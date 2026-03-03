@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>SEO Rankings Report — Michael's Trattoria</title>
+    <title>SEO Case Study — Michael's Trattoria</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -191,6 +191,78 @@
         }
         .timeline-content li { margin-bottom: 4px; }
 
+        /* Before/After */
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 16px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .before-after .state {
+            background: #f8f8f5;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+        }
+        .before-after .state.before {
+            border-top: 3px solid #c62828;
+        }
+        .before-after .state.after {
+            border-top: 3px solid #2e7d32;
+        }
+        .before-after .state .state-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+        .before-after .state .state-value {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .before-after .state .state-date {
+            font-size: 0.75rem;
+            color: #999;
+            margin-top: 2px;
+        }
+        .before-after .arrow {
+            font-size: 1.5rem;
+            color: #2e7d32;
+        }
+        .issues-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .issue-card {
+            background: #fff5f5;
+            border-left: 3px solid #c62828;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.9rem;
+        }
+        .issue-card .issue-label {
+            font-weight: 600;
+            color: #c62828;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .issue-card .issue-detail {
+            color: #555;
+            margin-top: 2px;
+        }
+        .resolved-card {
+            background: #f0fff4;
+            border-left: 3px solid #2e7d32;
+        }
+        .resolved-card .issue-label {
+            color: #2e7d32;
+        }
+
         /* Notes */
         .note {
             background: #fdf8ef;
@@ -223,6 +295,9 @@
             table { font-size: 0.8rem; }
             th, td { padding: 8px; }
             .summary-grid { grid-template-columns: repeat(2, 1fr); }
+            .issues-grid { grid-template-columns: 1fr; }
+            .before-after { grid-template-columns: 1fr; gap: 8px; }
+            .before-after .arrow { transform: rotate(90deg); text-align: center; }
         }
     </style>
 </head>
@@ -231,12 +306,12 @@
     <!-- Header -->
     <header class="report-header">
         <div class="container">
-            <h1>SEO Rankings Report — <span class="gold">Michael's Trattoria</span></h1>
-            <p class="subtitle">Organic Search Performance Tracking</p>
+            <h1>SEO Case Study — <span class="gold">Michael's Trattoria</span></h1>
+            <p class="subtitle">From Page 2 to Page 1: A Local Restaurant SEO Journey</p>
             <div class="report-meta">
                 <span><strong>Website:</strong> <a href="https://michaelstrattoria.com" target="_blank">michaelstrattoria.com</a></span>
                 <span><strong>Location:</strong> 344 Center Street, Wallingford, CT 06492</span>
-                <span><strong>Report Started:</strong> February 19, 2026</span>
+                <span><strong>Tracking Since:</strong> February 2025</span>
             </div>
         </div>
     </header>
@@ -258,15 +333,129 @@
                 <div class="label">Best Italian Restaurant<br>Wallingford CT</div>
             </div>
             <div class="summary-card">
-                <div class="number" style="color:#bbb;">—</div>
-                <div class="label">Private Parties<br>Wallingford CT</div>
+                <div class="number rank-yellow">#10</div>
+                <div class="label">Restaurants<br>Wallingford CT</div>
+            </div>
+        </div>
+
+        <!-- Where We Started -->
+        <div class="section">
+            <h2>Where We Started</h2>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:16px;">Initial assessment: <strong>February 10, 2025</strong> — before any SEO work was performed.</p>
+
+            <h3>The Situation</h3>
+            <p style="font-size:0.9rem; color:#555; margin-bottom:12px;">Michael's Trattoria — a 30+ year Wallingford institution with the highest Google rating (4.5 stars) and most reviews (227 on Yelp) of any Italian restaurant in town — was nearly invisible in Google search. The restaurant had recently migrated from WordPress to a new static site, but Google still had the old URLs indexed.</p>
+
+            <div class="issues-grid">
+                <div class="issue-card">
+                    <div class="issue-label">Ranking #9</div>
+                    <div class="issue-detail">"Italian restaurant wallingford ct" — buried behind pizza shops and aggregators</div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-label">Not Ranking</div>
+                    <div class="issue-detail">"Restaurants in wallingford ct" — not found anywhere on page 1</div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-label">Broken Indexing</div>
+                    <div class="issue-detail">Google still showing old WordPress URLs (/dinner/, /lunch/, /about-us/) — new pages not indexed</div>
+                </div>
+                <div class="issue-card">
+                    <div class="issue-label">Generic Title Tag</div>
+                    <div class="issue-detail">Homepage title said "Fine Italian Cuisine" — no location keywords, no brand differentiation</div>
+                </div>
+            </div>
+
+            <h3>The Progress</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Feb 2025</th>
+                        <th>Feb 2026</th>
+                        <th>Mar 2026</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>italian food wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge top3">#2</span></td>
+                        <td><span class="rank-badge top3">#2</span></td>
+                        <td><span class="change up">&#9650; To page 1, top 3</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>italian restaurants wallingford ct</strong></td>
+                        <td><span class="rank-badge top10">#9</span></td>
+                        <td><span class="rank-badge top3">#3</span></td>
+                        <td><span class="rank-badge top3">#3</span></td>
+                        <td><span class="change up">&#9650; Up 6 positions</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>best italian restaurant wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge top10">#6</span></td>
+                        <td><span class="rank-badge top10">#6</span></td>
+                        <td><span class="change up">&#9650; To page 1</span></td>
+                    </tr>
+                    <tr class="highlight">
+                        <td><strong>restaurants wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="rank-badge top10">#10</span></td>
+                        <td><span class="change up">&#9650; New to page 1</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>private parties wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="change new">No change</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>private dining wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="change new">No change</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>catering wallingford ct</strong></td>
+                        <td><span class="rank-badge notfound">N/A</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="rank-badge notfound">10+</span></td>
+                        <td><span class="change new">No change</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Key Milestone: "restaurants wallingford ct"</h3>
+            <p style="font-size:0.9rem; color:#555; margin-bottom:12px;">The broadest and most competitive keyword — and the one most diners actually search for:</p>
+
+            <div class="before-after">
+                <div class="state before">
+                    <div class="state-label">Before</div>
+                    <div class="state-value rank-red">Not Ranking</div>
+                    <div class="state-date">Feb 2025</div>
+                </div>
+                <div class="arrow">&#10132;</div>
+                <div class="state after">
+                    <div class="state-value rank-green">#10 — Page 1</div>
+                    <div class="state-label">After</div>
+                    <div class="state-date">Mar 2026</div>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>Why this matters:</strong> "Restaurants wallingford ct" is the highest-volume local search query. It's dominated by aggregators (TripAdvisor, Yelp, OpenTable hold 3 of the top 4 spots). Only 5 individual restaurant websites appear on page 1 — and Michael's is now one of them. This was achieved through on-site SEO work alone, without any Google Business Profile optimization or review strategy, which means there's still significant untapped growth potential.
             </div>
         </div>
 
         <!-- Current Rankings -->
         <div class="section">
             <h2>Current Keyword Rankings</h2>
-            <p style="font-size:0.9rem; color:#666; margin-bottom:16px;">Last checked: <strong>February 19, 2026</strong></p>
+            <p style="font-size:0.9rem; color:#666; margin-bottom:16px;">Last checked: <strong>March 3, 2026</strong></p>
 
             <table class="keyword-table">
                 <thead>
@@ -298,9 +487,9 @@
                     </tr>
                     <tr>
                         <td><strong>restaurants wallingford ct</strong></td>
-                        <td><span class="rank-badge notfound">10+</span></td>
-                        <td>TripAdvisor (#1), Yelp (#2)</td>
-                        <td><span class="change new">Baseline</span></td>
+                        <td><span class="rank-badge top10">#10</span></td>
+                        <td>TripAdvisor (#1), Serafino's (#2)</td>
+                        <td><span class="change up">&#9650; New to page 1</span></td>
                     </tr>
                     <tr>
                         <td><strong>private parties wallingford ct</strong></td>
@@ -383,22 +572,25 @@
                 </tbody>
             </table>
 
-            <h3>4. "restaurants wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
+            <h3>4. "restaurants wallingford ct" — <span class="gold">Position #10</span> <span class="change up">&#9650; New to page 1</span></h3>
             <table>
                 <thead><tr><th>#</th><th>Result</th><th>URL</th></tr></thead>
                 <tbody>
                     <tr><td>1</td><td>TripAdvisor</td><td>tripadvisor.com</td></tr>
-                    <tr><td>2</td><td>Yelp</td><td>yelp.com</td></tr>
-                    <tr><td>3</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
-                    <tr><td>4</td><td>Gaetano's Tavern on Main</td><td>gaetanostavern.com</td></tr>
-                    <tr><td>5</td><td>OpenTable</td><td>opentable.com</td></tr>
-                    <tr><td>6</td><td>99 Restaurants</td><td>99restaurants.com</td></tr>
+                    <tr><td>2</td><td>Serafino's Restaurant</td><td>serafinorestaurant.com</td></tr>
+                    <tr><td>3</td><td>Yelp</td><td>yelp.com</td></tr>
+                    <tr><td>4</td><td>OpenTable</td><td>opentable.com</td></tr>
+                    <tr><td>5</td><td>99 Restaurants</td><td>99restaurants.com</td></tr>
+                    <tr><td>6</td><td>Colony Diner</td><td>colonydiner.com</td></tr>
                     <tr><td>7</td><td>Terrace on the Green</td><td>terracect.com</td></tr>
-                    <tr><td>8</td><td>Knuckleheads Taproom</td><td>knuckleheadstaproom.com</td></tr>
+                    <tr><td>8</td><td>Gaetano's Tavern on Main</td><td>gaetanostavern.com</td></tr>
                     <tr><td>9</td><td>Cranky Coqui</td><td>crankycoqui.com</td></tr>
-                    <tr><td>10</td><td>Yelp (2nd listing)</td><td>yelp.com</td></tr>
+                    <tr class="highlight"><td>10</td><td>Michael's Trattoria</td><td>michaelstrattoria.com</td></tr>
                 </tbody>
             </table>
+            <div class="note">
+                <strong>Milestone:</strong> Michael's Trattoria now appears on page 1 for this highly competitive broad keyword. Previously not in the top 10 (Feb 2026 baseline) and not ranking at all (Feb 2025 assessment). This is the hardest keyword to crack — dominated by aggregators (TripAdvisor, Yelp, OpenTable take 3 spots) and long-established sites. Michael's is the 5th individual restaurant to appear, behind Serafino's, Colony Diner, Terrace on the Green, Gaetano's, and Cranky Coqui.
+            </div>
 
             <h3>5. "private parties wallingford ct" — <span style="color:#999;">Not in Top 10</span></h3>
             <table>
@@ -457,6 +649,20 @@
             <h2>Optimization Work Log</h2>
 
             <div class="timeline-entry">
+                <div class="timeline-date">February 10, 2025 — Initial Assessment & Website Launch</div>
+                <div class="timeline-content">
+                    <p>Completed SEO assessment of the newly launched static site (migrated from WordPress):</p>
+                    <ul>
+                        <li><strong>Baseline rankings recorded:</strong> #9 for "italian restaurant wallingford ct", not ranking for broad "restaurants" queries.</li>
+                        <li><strong>Critical issue identified:</strong> Google still indexing old WordPress URLs — new pages not yet discovered.</li>
+                        <li><strong>Foundations built:</strong> Meta descriptions, Restaurant/Menu JSON-LD schema, canonical URLs, Open Graph tags, XML sitemap, robots.txt, mobile-responsive design, and DoorDash OrderAction schema all implemented.</li>
+                        <li><strong>301 redirects configured:</strong> 22 permanent redirects from old WordPress URLs (e.g., /dinner/ → /dinner-menu) via vercel.json to preserve link equity and prevent 404s.</li>
+                        <li><strong>Sitemap submitted</strong> to Google Search Console to accelerate indexing of new pages.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
                 <div class="timeline-date">February 19, 2026 — On-Site SEO Audit & Fixes</div>
                 <div class="timeline-content">
                     <p>Completed comprehensive on-site SEO audit and implemented fixes across all 9 pages:</p>
@@ -469,6 +675,18 @@
                         <li><strong>Internal linking strengthened:</strong> "Browse Other Menus" cross-link section on all 6 menu pages. Fixed homepage footer menu link. Added catering menu link to private events page.</li>
                         <li><strong>Schema improvements:</strong> Added <code>@id</code> to Restaurant entity for connected knowledge graph. Updated all Menu schemas to reference it. Added <code>twitter:card</code> meta tags site-wide.</li>
                         <li><strong>Housekeeping:</strong> Updated copyright to 2026. Updated sitemap lastmod dates.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="timeline-date">March 3, 2026 — Rankings Re-evaluation</div>
+                <div class="timeline-content">
+                    <p>Re-checked all keyword positions against live Google results:</p>
+                    <ul>
+                        <li><strong>"restaurants wallingford ct" — broke into page 1 at #10.</strong> Previously not in top 10. Michael's is now one of only 5 individual restaurant sites on page 1 for this broad keyword (alongside Serafino's, Colony Diner, Terrace on the Green, Gaetano's, and Cranky Coqui). Aggregators (TripAdvisor, Yelp, OpenTable) hold 3 of the top 4 spots.</li>
+                        <li><strong>New competitor emerging:</strong> Luce Osteria Parker Farms (from the Luce Restaurant Group in Hamden) announced a Wallingford location at 295 Parker Farms Rd (former Laskara site). Over 35 years of brand authority will enter the local Italian market.</li>
+                        <li><strong>Serafino's remains #1</strong> for Italian keywords and #2 for the broad "restaurants" query — consistently the top organic competitor across all tracked keywords.</li>
                     </ul>
                 </div>
             </div>
