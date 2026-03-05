@@ -46,10 +46,10 @@
   <!-- Card 2 -->
   <rect x="620" y="215" width="530" height="88" rx="10" fill="#222222" filter="url(#shadow)"/>
   <text x="645" y="248" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#999" font-weight="bold" letter-spacing="1">KEYWORD</text>
-  <text x="645" y="280" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" font-weight="bold">"italian restaurant wallingford ct"</text>
+  <text x="645" y="280" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#ffffff" font-weight="bold">"best italian restaurant wallingford"</text>
   <rect x="990" y="225" width="145" height="68" rx="8" fill="#1a2e1a"/>
-  <text x="1062" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4ade80" letter-spacing="1">#9 →</text>
-  <text x="1062" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#4ade80" font-weight="bold">#3</text>
+  <text x="1062" y="252" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#4ade80" letter-spacing="1">NOT FOUND →</text>
+  <text x="1062" y="283" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#4ade80" font-weight="bold">#6</text>
 
   <!-- Card 3 -->
   <rect x="50" y="320" width="530" height="88" rx="10" fill="#222222" filter="url(#shadow)"/>
