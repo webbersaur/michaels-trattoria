@@ -47,6 +47,12 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+    <!-- Font fallbacks to prevent CLS -->
+    <style>
+        @font-face{font-family:'Playfair Display Fallback';src:local('Georgia');size-adjust:112.4%;ascent-override:89%;descent-override:22%;line-gap-override:0%}
+        @font-face{font-family:'Cormorant Garamond Fallback';src:local('Georgia');size-adjust:105.2%;ascent-override:92%;descent-override:25%;line-gap-override:0%}
+        @font-face{font-family:'Lato Fallback';src:local('Arial');size-adjust:97.4%;ascent-override:101%;descent-override:22%;line-gap-override:0%}
+    </style>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,6 +3,34 @@
    Elegant Dark Theme for Fine Italian Dining
    ============================================= */
 
+/* Font fallbacks with size-adjust to prevent CLS on font swap */
+@font-face {
+    font-family: 'Playfair Display Fallback';
+    src: local('Georgia');
+    size-adjust: 112.4%;
+    ascent-override: 89%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond Fallback';
+    src: local('Georgia');
+    size-adjust: 105.2%;
+    ascent-override: 92%;
+    descent-override: 25%;
+    line-gap-override: 0%;
+}
+
+@font-face {
+    font-family: 'Lato Fallback';
+    src: local('Arial');
+    size-adjust: 97.4%;
+    ascent-override: 101%;
+    descent-override: 22%;
+    line-gap-override: 0%;
+}
+
 /* CSS Custom Properties */
 :root {
     /* Colors */
@@ -20,9 +48,9 @@
     --color-text-muted: #808080;
 
     /* Typography */
-    --font-script: 'Playfair Display', Georgia, serif;
-    --font-heading: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-script: 'Playfair Display', 'Playfair Display Fallback', Georgia, serif;
+    --font-heading: 'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+    --font-body: 'Lato', 'Lato Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing */
     --spacing-xs: 0.5rem;
