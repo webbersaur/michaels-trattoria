@@ -26,6 +26,7 @@ There are no tests, linters, or build steps.
 - `menu.html` — Hub page linking to 6 sub-menus
 - `dinner-menu.html`, `lunch-menu.html`, `pizza-menu.html`, `desserts-menu.html`, `wine-menu.html`, `catering-menu.html` — Individual menu pages
 - `private-parties.html` — Private parties page with 4 dining rooms (16-75 guests), room cards, FAQ section with FAQPage schema
+- `restaurants-in-wallingford.html` — SEO landing page targeting "restaurants in wallingford" keyword, with rich local content, FAQPage schema, and internal links
 
 ### CSS (2 files, no preprocessor)
 - `css/styles.css` (~1,400 lines) — Full site: reset, nav, hero, about, gallery, lightbox, events, contact, footer, rate modal, animations, responsive breakpoints (1024/768/480px)

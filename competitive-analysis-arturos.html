@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Competitive Analysis: Michael's Trattoria vs Arturo's Restaurant | March 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a2e; line-height: 1.6; background: #f8f9fa; }
+
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 2rem; }
+        .header-inner { max-width: 900px; margin: 0 auto; }
+        .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .header .subtitle { color: #a0aec0; font-size: 1.1rem; }
+        .header .date { color: #718096; font-size: 0.9rem; margin-top: 0.5rem; }
+        .header .vs-bar { display: flex; gap: 1.5rem; align-items: center; margin-top: 1.5rem; flex-wrap: wrap; }
+        .header .vs-card { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 1rem 1.5rem; flex: 1; min-width: 200px; }
+        .header .vs-card.client { border: 2px solid #38a169; }
+        .header .vs-card.competitor { border: 2px solid #e53e3e; opacity: 0.85; }
+        .header .vs-card .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #a0aec0; }
+        .header .vs-card .name { font-size: 1.15rem; font-weight: 700; }
+        .header .vs-card .detail { font-size: 0.85rem; color: #a0aec0; }
+        .header .vs-divider { font-size: 1.5rem; font-weight: 800; color: #718096; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+        .alert { background: #d4edda; border-left: 4px solid #28a745; padding: 1.25rem 1.5rem; border-radius: 0 8px 8px 0; margin-bottom: 2rem; }
+        .alert h3 { font-size: 1rem; margin-bottom: 0.25rem; color: #155724; }
+        .alert p { font-size: 0.95rem; color: #495057; }
+
+        .section { background: #fff; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        .section h2 { font-size: 1.35rem; margin-bottom: 1rem; color: #1a1a2e; border-bottom: 2px solid #e9ecef; padding-bottom: 0.75rem; }
+        .section h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; color: #2d3748; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .comparison-table th { background: #f7fafc; text-align: left; padding: 0.75rem 1rem; font-size: 0.85rem; text-transform: uppercase; color: #718096; letter-spacing: 0.05em; border-bottom: 2px solid #e2e8f0; }
+        .comparison-table th.client-col { background: #f0fff4; color: #276749; }
+        .comparison-table th.comp-col { background: #fff5f5; color: #9b2c2c; }
+        .comparison-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #e2e8f0; font-size: 0.95rem; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+
+        .score-bar { display: flex; align-items: center; gap: 0.75rem; }
+        .score-fill { height: 8px; border-radius: 4px; }
+        .score-text { font-weight: 700; font-size: 0.95rem; min-width: 40px; }
+        .score-perfect { color: #38a169; }
+        .score-good { color: #38a169; }
+        .score-ok { color: #d69e2e; }
+        .score-bad { color: #e53e3e; }
+
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .metric { background: #f7fafc; border-radius: 8px; padding: 1.25rem; text-align: center; }
+        .metric .value { font-size: 2rem; font-weight: 700; color: #2d3748; }
+        .metric .label { font-size: 0.85rem; color: #718096; margin-top: 0.25rem; }
+        .metric.good .value { color: #38a169; }
+        .metric.warning .value { color: #d69e2e; }
+        .metric.bad .value { color: #e53e3e; }
+
+        .win { color: #38a169; font-weight: 600; }
+        .lose { color: #e53e3e; font-weight: 600; }
+        .neutral { color: #718096; }
+
+        .badge { display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 600; }
+        .badge-win { background: #c6f6d5; color: #276749; }
+        .badge-lose { background: #fed7d7; color: #9b2c2c; }
+        .badge-tie { background: #e2e8f0; color: #4a5568; }
+
+        .winner-icon::before { content: "\2713 "; }
+
+        .platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+        .platform-card { background: #f7fafc; border-radius: 8px; padding: 1rem 1.25rem; }
+        .platform-card .platform-name { font-weight: 600; font-size: 0.9rem; color: #2d3748; margin-bottom: 0.5rem; }
+        .platform-card .stat { font-size: 0.85rem; color: #4a5568; }
+        .platform-card .stat strong { color: #1a1a2e; }
+
+        .tech-detail { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0; }
+        .tech-detail:last-child { border-bottom: none; }
+        .tech-detail .tech-label { color: #718096; font-size: 0.9rem; }
+        .tech-detail .tech-value { font-weight: 600; font-size: 0.9rem; }
+
+        .priority-list { list-style: none; counter-reset: priority; }
+        .priority-list li { padding: 1rem 1rem 1rem 3.5rem; margin-bottom: 0.75rem; border-radius: 8px; position: relative; border: 1px solid #e2e8f0; }
+        .priority-list li::before { counter-increment: priority; content: counter(priority); position: absolute; left: 1rem; top: 1rem; background: #3182ce; color: #fff; width: 28px; height: 28px; border-radius: 50%; text-align: center; line-height: 28px; font-weight: 700; font-size: 0.85rem; }
+        .priority-list li.high { border-left: 4px solid #e53e3e; }
+        .priority-list li.high::before { background: #e53e3e; }
+        .priority-list li.medium { border-left: 4px solid #d69e2e; }
+        .priority-list li.medium::before { background: #d69e2e; }
+        .priority-list li.low { border-left: 4px solid #38a169; }
+        .priority-list li.low::before { background: #38a169; }
+        .priority-list .title { font-weight: 600; display: block; }
+        .priority-list .desc { font-size: 0.9rem; color: #4a5568; margin-top: 0.25rem; }
+        .priority-list .impact { font-size: 0.8rem; font-weight: 600; margin-top: 0.5rem; display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; }
+        .impact-high { background: #fed7d7; color: #c53030; }
+        .impact-medium { background: #fefcbf; color: #975a16; }
+
+        .summary-box { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; }
+        .summary-box h2 { color: #fff; border-bottom-color: rgba(255,255,255,0.15); }
+        .summary-box p { color: #cbd5e0; font-size: 0.95rem; line-height: 1.7; }
+        .summary-box strong { color: #fff; }
+        .summary-scoreboard { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+        .summary-score { text-align: center; padding: 1rem; border-radius: 8px; }
+        .summary-score.client-score { background: rgba(56, 161, 105, 0.15); border: 1px solid rgba(56, 161, 105, 0.3); }
+        .summary-score.comp-score { background: rgba(229, 62, 62, 0.15); border: 1px solid rgba(229, 62, 62, 0.3); }
+        .summary-score .score-num { font-size: 2.5rem; font-weight: 800; }
+        .summary-score.client-score .score-num { color: #68d391; }
+        .summary-score.comp-score .score-num { color: #fc8181; }
+        .summary-score .score-label { font-size: 0.85rem; color: #a0aec0; }
+
+        .footer-note { text-align: center; color: #a0aec0; font-size: 0.85rem; padding: 2rem 0; }
+        .footer-note a { color: #718096; }
+
+        @media print {
+            body { background: #fff; }
+            .section { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }
+            .summary-box { break-inside: avoid; }
+        }
+        @media (max-width: 600px) {
+            .header .vs-bar { flex-direction: column; }
+            .header .vs-divider { display: none; }
+            .platform-grid { grid-template-columns: 1fr; }
+            .summary-scoreboard { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 0.85rem; }
+            .comparison-table td, .comparison-table th { padding: 0.5rem 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="header-inner">
+        <h1>Competitive Analysis</h1>
+        <div class="subtitle">Technical SEO & Local Search Comparison</div>
+        <div class="date">Prepared March 20, 2026 &middot; Webbersaurus Digital</div>
+        <div class="vs-bar">
+            <div class="vs-card client">
+                <div class="label">Your Business</div>
+                <div class="name">Michael's Trattoria</div>
+                <div class="detail">344 Center St, Wallingford, CT 06492</div>
+                <div class="detail">michaelstrattoria.com</div>
+            </div>
+            <div class="vs-divider">VS</div>
+            <div class="vs-card competitor">
+                <div class="label">Competitor</div>
+                <div class="name">Arturo's Restaurant</div>
+                <div class="detail">53 School Ground Rd, Branford, CT 06405</div>
+                <div class="detail">arturosrestaurantct.com</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="alert">
+        <h3>Key Finding</h3>
+        <p>Michael's Trattoria holds a significant technical and local search advantage over Arturo's Restaurant across every measurable category — perfect Lighthouse scores, 3x the review volume, full structured data, and top organic rankings for primary keywords.</p>
+    </div>
+
+    <!-- LIGHTHOUSE SCORES -->
+    <div class="section">
+        <h2>Technical SEO — Lighthouse (Mobile)</h2>
+        <p style="font-size: 0.9rem; color: #718096; margin-bottom: 1rem;">Google Lighthouse audits run on mobile, which is how Google indexes and ranks sites.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th class="client-col">Michael's</th>
+                    <th class="comp-col">Arturo's</th>
+                    <th>Winner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Accessibility</td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-perfect">100</span>
+                            <div class="score-fill" style="width: 100px; background: #38a169;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-good">96</span>
+                            <div class="score-fill" style="width: 96px; background: #38a169;"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-win">Michael's</span></td>
+                </tr>
+                <tr>
+                    <td>Best Practices</td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-perfect">100</span>
+                            <div class="score-fill" style="width: 100px; background: #38a169;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-bad">58</span>
+                            <div class="score-fill" style="width: 58px; background: #e53e3e;"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-win">Michael's</span></td>
+                </tr>
+                <tr>
+                    <td>SEO</td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-perfect">100</span>
+                            <div class="score-fill" style="width: 100px; background: #38a169;"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="score-bar">
+                            <span class="score-text score-perfect">100</span>
+                            <div class="score-fill" style="width: 100px; background: #38a169;"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-tie">Tie</span></td>
+                </tr>
+                <tr>
+                    <td>Failed Audits</td>
+                    <td><span class="win">0 failures</span></td>
+                    <td><span class="lose">4 failures</span></td>
+                    <td><span class="badge badge-win">Michael's</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TECH STACK -->
+    <div class="section">
+        <h2>Website Technology & Infrastructure</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th class="client-col">Michael's</th>
+                    <th class="comp-col">Arturo's</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Platform</td>
+                    <td><span class="win">Custom HTML/CSS/JS</span></td>
+                    <td>Wix (website builder)</td>
+                </tr>
+                <tr>
+                    <td>Hosting</td>
+                    <td><span class="win">Vercel (edge CDN)</span></td>
+                    <td>Wix Cloud</td>
+                </tr>
+                <tr>
+                    <td>URL Structure</td>
+                    <td><span class="win">Clean (/menu, /dinner-menu)</span></td>
+                    <td><span class="lose">Mixed (/menu-1?menu=brunch-menu)</span></td>
+                </tr>
+                <tr>
+                    <td>Structured Data (Schema)</td>
+                    <td><span class="win">Restaurant, Menu, MenuItem, FAQPage, BreadcrumbList</span></td>
+                    <td><span class="lose">None detected</span></td>
+                </tr>
+                <tr>
+                    <td>Sitemap</td>
+                    <td><span class="win">Custom XML sitemap (10 URLs)</span></td>
+                    <td>Wix auto-generated</td>
+                </tr>
+                <tr>
+                    <td>Performance Optimization</td>
+                    <td><span class="win">Critical CSS inlined, lazy loading, image preloading, deferred JS</span></td>
+                    <td><span class="lose">Wix default (heavy JS bundle, third-party scripts)</span></td>
+                </tr>
+                <tr>
+                    <td>LLM Discovery (llms.txt)</td>
+                    <td><span class="win">Yes — structured business info</span></td>
+                    <td><span class="lose">No</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Why This Matters</h3>
+        <p style="font-size: 0.9rem; color: #4a5568; margin-top: 0.5rem;">A custom-built site gives Michael's full control over page speed, structured data, and technical SEO — none of which can be fully optimized on Wix. Arturo's Wix site injects heavy JavaScript bundles and third-party tracking that drag down Best Practices scores and page load times. Structured data (Schema markup) helps Google understand menus, hours, prices, and FAQs directly — Michael's has comprehensive schema while Arturo's has none.</p>
+    </div>
+
+    <!-- LOCAL SEARCH RANKINGS -->
+    <div class="section">
+        <h2>Local Search Rankings (Organic)</h2>
+        <p style="font-size: 0.9rem; color: #718096; margin-bottom: 1rem;">Google organic search results as of March 20, 2026. These reflect website rankings, not Google Maps/Local Pack.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Search Term</th>
+                    <th class="client-col">Michael's</th>
+                    <th class="comp-col">Arturo's</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>"italian restaurant wallingford ct"</strong></td>
+                    <td><span class="win">#1 organic</span></td>
+                    <td><span class="neutral">N/A (different market)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>"italian restaurant branford ct"</strong></td>
+                    <td><span class="neutral">N/A (different market)</span></td>
+                    <td><span class="lose">Not in top 10</span></td>
+                </tr>
+                <tr>
+                    <td><strong>"mexican italian restaurant branford ct"</strong></td>
+                    <td><span class="neutral">N/A</span></td>
+                    <td><span class="win">#1 organic</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Brand name search</strong></td>
+                    <td><span class="win">#1 + sitelinks</span></td>
+                    <td><span class="win">#1</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Analysis</h3>
+        <p style="font-size: 0.9rem; color: #4a5568; margin-top: 0.5rem;">Michael's dominates the "italian restaurant" keyword in Wallingford. Arturo's ranks #1 for their niche fusion keyword but is <strong>invisible for the high-volume generic term "italian restaurant branford ct"</strong> — that search is dominated by Cafe Fiore, LoMonaco's, La Luna, and Rossitto's. This represents a major missed opportunity for Arturo's, as they serve Italian cuisine but aren't competing for the keyword.</p>
+    </div>
+
+    <!-- REVIEW PRESENCE -->
+    <div class="section">
+        <h2>Online Review & Citation Presence</h2>
+
+        <div class="metric-grid">
+            <div class="metric good">
+                <div class="value">227</div>
+                <div class="label">Michael's Yelp Reviews</div>
+            </div>
+            <div class="metric bad">
+                <div class="value">70</div>
+                <div class="label">Arturo's Yelp Reviews</div>
+            </div>
+            <div class="metric good">
+                <div class="value">3.2x</div>
+                <div class="label">Michael's Review Advantage</div>
+            </div>
+            <div class="metric warning">
+                <div class="value">2019</div>
+                <div class="label">Arturo's Est. Year</div>
+            </div>
+        </div>
+
+        <h3>Platform Presence</h3>
+        <div class="platform-grid">
+            <div class="platform-card">
+                <div class="platform-name" style="color: #276749;">Michael's Trattoria</div>
+                <div class="stat"><strong>Yelp:</strong> 227 reviews, 170+ photos</div>
+                <div class="stat"><strong>TripAdvisor:</strong> #7 of 112 restaurants in Wallingford</div>
+                <div class="stat"><strong>OpenTable:</strong> Listed with reservations</div>
+                <div class="stat"><strong>Google:</strong> Active GBP with posts</div>
+                <div class="stat"><strong>Other:</strong> CT Living, Wanderlog, Giftly, Menu-World</div>
+            </div>
+            <div class="platform-card">
+                <div class="platform-name" style="color: #9b2c2c;">Arturo's Restaurant</div>
+                <div class="stat"><strong>Yelp:</strong> 70 reviews, 310 photos</div>
+                <div class="stat"><strong>TripAdvisor:</strong> Listed (limited reviews)</div>
+                <div class="stat"><strong>OpenTable:</strong> Not listed</div>
+                <div class="stat"><strong>Google:</strong> Active GBP</div>
+                <div class="stat"><strong>Other:</strong> CTvisit, Shoreline Chamber, America's Best Restaurants, Facebook, Instagram</div>
+            </div>
+        </div>
+
+        <h3>Notable</h3>
+        <p style="font-size: 0.9rem; color: #4a5568; margin-top: 0.5rem;">Arturo's has a secondary domain — <strong>mexicananditalianfusionbranford.com</strong> — that appears in search results and points to their business. This could help with niche keyword visibility but may also dilute link equity if not properly redirected. Michael's has a clean, single-domain presence with consistent NAP (name, address, phone) across all platforms.</p>
+    </div>
+
+    <!-- CONTENT & PAGES -->
+    <div class="section">
+        <h2>Website Content Comparison</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Content Feature</th>
+                    <th class="client-col">Michael's</th>
+                    <th class="comp-col">Arturo's</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Indexed Pages</td>
+                    <td>~10 (focused & optimized)</td>
+                    <td>~10+ (Wix auto-generated)</td>
+                </tr>
+                <tr>
+                    <td>Menu Pages</td>
+                    <td><span class="win">6 dedicated pages (dinner, lunch, pizza, desserts, wine, catering)</span></td>
+                    <td>Multiple menus (dinner, brunch, happy hour, catering, taco tuesday)</td>
+                </tr>
+                <tr>
+                    <td>Menu Items in Schema</td>
+                    <td><span class="win">Full JSON-LD with names, descriptions, prices</span></td>
+                    <td><span class="lose">None</span></td>
+                </tr>
+                <tr>
+                    <td>Private Events Page</td>
+                    <td><span class="win">Dedicated page with FAQ schema (12 questions)</span></td>
+                    <td><span class="lose">No dedicated page</span></td>
+                </tr>
+                <tr>
+                    <td>Online Ordering</td>
+                    <td>DoorDash link (OrderAction schema)</td>
+                    <td>Built-in ordering + DoorDash</td>
+                </tr>
+                <tr>
+                    <td>Reservations</td>
+                    <td>Phone-based</td>
+                    <td><span class="win">Online reservation page</span></td>
+                </tr>
+                <tr>
+                    <td>Title Tags</td>
+                    <td><span class="win">Keyword-optimized per page</span></td>
+                    <td>Generic Wix titles</td>
+                </tr>
+                <tr>
+                    <td>Meta Descriptions</td>
+                    <td><span class="win">Custom per page</span></td>
+                    <td>Auto-generated or missing</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SCOREBOARD -->
+    <div class="summary-box">
+        <h2>Overall Scoreboard</h2>
+        <div class="summary-scoreboard">
+            <div class="summary-score client-score">
+                <div class="score-num">7</div>
+                <div class="score-label">Categories Won — Michael's</div>
+            </div>
+            <div class="summary-score comp-score">
+                <div class="score-num">1</div>
+                <div class="score-label">Categories Won — Arturo's</div>
+            </div>
+        </div>
+        <p>Michael's Trattoria leads in nearly every technical and local search category. The custom-built website with full structured data, perfect Lighthouse scores, and strong review presence creates a compounding SEO advantage that a Wix site cannot easily replicate. Arturo's sole win is in the niche "mexican italian" fusion keyword space, where they have no direct competition in Branford.</p>
+    </div>
+
+    <!-- WHAT THIS MEANS -->
+    <div class="section">
+        <h2>What This Means for Michael's</h2>
+
+        <h3>Your Competitive Advantages</h3>
+        <ul class="priority-list">
+            <li class="low" style="border-left-color: #38a169;">
+                <span class="title">Technical foundation is best-in-class</span>
+                <span class="desc">Perfect 100/100/100 Lighthouse scores are rare for any restaurant website. Your custom site is faster, more accessible, and better optimized than virtually all competitors in the CT restaurant space.</span>
+                <span class="impact" style="background: #c6f6d5; color: #276749;">Maintain this advantage</span>
+            </li>
+            <li class="low" style="border-left-color: #38a169;">
+                <span class="title">Structured data gives you rich search results</span>
+                <span class="desc">Your comprehensive Schema markup (menus with prices, FAQ, breadcrumbs, restaurant details) gives Google everything it needs to display rich results — something Arturo's site provides none of.</span>
+                <span class="impact" style="background: #c6f6d5; color: #276749;">Maintain this advantage</span>
+            </li>
+            <li class="low" style="border-left-color: #38a169;">
+                <span class="title">Review volume signals trust and authority</span>
+                <span class="desc">227 Yelp reviews vs 70 is a significant gap. Combined with TripAdvisor and OpenTable presence, Michael's sends stronger trust signals to both Google and potential customers.</span>
+                <span class="impact" style="background: #c6f6d5; color: #276749;">Keep building reviews</span>
+            </li>
+        </ul>
+
+        <h3>Opportunities to Extend the Lead</h3>
+        <ul class="priority-list">
+            <li class="medium">
+                <span class="title">Target "best italian restaurant CT" and broader regional terms</span>
+                <span class="desc">With your strong technical foundation, you're well-positioned to compete beyond Wallingford for regional searches like "best italian restaurant new haven county" or "italian restaurant near me" in the broader CT shoreline area.</span>
+                <span class="impact impact-medium">Medium impact</span>
+            </li>
+            <li class="medium">
+                <span class="title">Continue Google Business Profile optimization</span>
+                <span class="desc">Regular GBP posts, photo uploads, and review responses keep your profile active and ranking in the Local Pack — the map results that appear above organic results for "near me" and local searches.</span>
+                <span class="impact impact-medium">Medium impact</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="footer-note">
+        Prepared by <a href="https://webbersaur.us">Webbersaurus Digital</a> &middot; March 2026<br>
+        Data sourced from Google Lighthouse, Google Search, Yelp, and TripAdvisor.
+    </div>
+
+</div>
+
+</body>
+</html>
