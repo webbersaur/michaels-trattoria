@@ -28,12 +28,17 @@
     { "source": "/about", "destination": "/", "permanent": true },
     { "source": "/gallery/", "destination": "/", "permanent": true },
     { "source": "/gallery", "destination": "/", "permanent": true },
+    { "source": "/author/:path*/", "destination": "/", "permanent": true },
     { "source": "/author/:path*", "destination": "/", "permanent": true },
+    { "source": "/2019/:path*/", "destination": "/", "permanent": true },
     { "source": "/2019/:path*", "destination": "/", "permanent": true },
     { "source": "/happy-2/", "destination": "/", "permanent": true },
     { "source": "/happy-2", "destination": "/", "permanent": true },
+    { "source": "/embed/:path*/", "destination": "/", "permanent": true },
     { "source": "/embed/:path*", "destination": "/", "permanent": true },
+    { "source": "/embed/", "destination": "/", "permanent": true },
     { "source": "/embed", "destination": "/", "permanent": true },
+    { "source": "/wp-content/:path*/", "destination": "/", "permanent": true },
     { "source": "/wp-content/:path*", "destination": "/", "permanent": true }
   ]
 }
