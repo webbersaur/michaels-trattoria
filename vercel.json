@@ -45,6 +45,12 @@
     { "source": "/specialties/", "destination": "/dinner-menu", "permanent": true },
     { "source": "/specialties", "destination": "/dinner-menu", "permanent": true },
     { "source": "/rate-your-experience/", "destination": "/", "permanent": true },
-    { "source": "/rate-your-experience", "destination": "/", "permanent": true }
+    { "source": "/rate-your-experience", "destination": "/", "permanent": true },
+    { "source": "/gift-cards/", "destination": "/", "permanent": true },
+    { "source": "/gift-cards", "destination": "/", "permanent": true },
+    { "source": "/support/contact/", "destination": "/#contact", "permanent": true },
+    { "source": "/support/contact", "destination": "/#contact", "permanent": true },
+    { "source": "/support/:path*/", "destination": "/", "permanent": true },
+    { "source": "/support/:path*", "destination": "/", "permanent": true }
   ]
 }
