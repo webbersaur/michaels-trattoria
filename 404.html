@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Page Not Found | Michael's Trattoria</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Critical CSS (above-the-fold) -->
+    <style>
+        @font-face{font-family:'Playfair Display Fallback';src:local('Georgia');size-adjust:112.4%;ascent-override:89%;descent-override:22%;line-gap-override:0%}
+        @font-face{font-family:'Cormorant Garamond Fallback';src:local('Georgia');size-adjust:105.2%;ascent-override:92%;descent-override:25%;line-gap-override:0%}
+        @font-face{font-family:'Lato Fallback';src:local('Arial');size-adjust:97.4%;ascent-override:101%;descent-override:22%;line-gap-override:0%}
+        :root{--color-bg-dark:#1a1a1a;--color-bg-darker:#111111;--color-bg-card:#242424;--color-gold:#c9a96e;--color-gold-light:#d4bc8a;--color-text-primary:#ffffff;--color-text-secondary:#b3b3b3;--color-text-muted:#808080;--font-script:'Playfair Display','Playfair Display Fallback',Georgia,serif;--font-heading:'Cormorant Garamond','Cormorant Garamond Fallback',Georgia,serif;--font-body:'Lato','Lato Fallback',-apple-system,BlinkMacSystemFont,sans-serif;--spacing-xs:0.5rem;--spacing-sm:1rem;--spacing-md:2rem;--spacing-lg:4rem;--spacing-xl:6rem;--nav-height:80px;--container-max:1200px}
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{font-size:16px}body{font-family:var(--font-body);background-color:var(--color-bg-dark);color:var(--color-text-primary);line-height:1.6;overflow-x:hidden}
+        img{max-width:100%;height:auto;display:block}a{color:var(--color-gold);text-decoration:none}ul{list-style:none}
+        .container{width:100%;max-width:var(--container-max);margin:0 auto;padding:0 var(--spacing-md)}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background-color:transparent}
+        .navbar.scrolled{background-color:var(--color-bg-darker);box-shadow:0 2px 20px rgba(0,0,0,0.5)}
+        .nav-container{display:flex;align-items:center;justify-content:space-between;max-width:var(--container-max);margin:0 auto;padding:var(--spacing-sm) var(--spacing-md);height:var(--nav-height)}
+        .nav-logo{display:flex;flex-direction:column;text-decoration:none;padding:1rem 0 0.5rem}
+        .logo-text{font-family:var(--font-script);font-size:4.11rem;font-weight:700;color:var(--color-gold);line-height:1}
+        .logo-subtext{font-family:var(--font-body);font-size:1.17rem;font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--color-text-secondary)}
+        .nav-menu{display:flex;gap:var(--spacing-md)}
+        .nav-link{font-size:0.875rem;font-weight:400;letter-spacing:1px;text-transform:uppercase;color:var(--color-text-primary);padding:0.5rem 0}
+        .nav-toggle{display:none}
+        .btn{display:inline-block;padding:0.875rem 2rem;font-family:var(--font-body);font-size:0.875rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer}
+        .btn-primary{background-color:var(--color-gold);color:var(--color-bg-dark)}
+        .nav-cta{padding:0.75rem 1.5rem}
+        .error-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:var(--spacing-md)}
+        .error-code{font-family:var(--font-script);font-size:clamp(6rem,15vw,10rem);font-weight:700;color:var(--color-gold);line-height:1;margin-bottom:var(--spacing-sm)}
+        .error-title{font-family:var(--font-heading);font-size:clamp(1.5rem,3vw,2.25rem);font-weight:400;letter-spacing:4px;text-transform:uppercase;color:var(--color-text-secondary);margin-bottom:var(--spacing-md)}
+        .error-text{font-size:1.125rem;color:var(--color-text-muted);max-width:500px;margin-bottom:var(--spacing-lg)}
+        .error-links{display:flex;flex-wrap:wrap;gap:var(--spacing-sm);justify-content:center}
+        .error-links a{padding:0.75rem 1.5rem;font-size:0.875rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:1px solid var(--color-gold);color:var(--color-gold);transition:background-color 0.3s,color 0.3s}
+        .error-links a:hover{background-color:var(--color-gold);color:var(--color-bg-dark)}
+        .error-links a.primary{background-color:var(--color-gold);color:var(--color-bg-dark)}
+        .error-links a.primary:hover{background-color:var(--color-gold-light)}
+        @media(max-width:768px){:root{--nav-height:70px}.nav-menu{display:none}.nav-toggle{display:block;background:none;border:none;cursor:pointer;padding:0.5rem;z-index:1001}.nav-cta{display:none}}
+    </style>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"></noscript>
+
+    <!-- Styles (non-render-blocking) -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-text">Michael's</span>
+                <span class="logo-subtext">Trattoria</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-dropdown">
+                    <a href="/menu" class="nav-link nav-dropdown-toggle">Menu <span class="dropdown-arrow"></span></a>
+                    <ul class="nav-dropdown-menu">
+                        <li><a href="/dinner-menu">Dinner</a></li>
+                        <li><a href="/lunch-menu">Lunch</a></li>
+                        <li><a href="/pizza-menu">Pizza</a></li>
+                        <li><a href="/desserts-menu">Desserts</a></li>
+                        <li><a href="/wine-menu">Wine</a></li>
+                        <li><a href="/catering-menu">Catering</a></li>
+                    </ul>
+                </li>
+                <li><a href="/#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="/private-parties" class="nav-link">Private Parties</a></li>
+                <li><a href="/#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <a href="https://www.doordash.com/store/michael's-trattoria-wallingford-148016/207721/?ignore_splash_experience=true" class="btn btn-primary nav-cta" target="_blank" rel="noopener">Order Online</a>
+        </div>
+    </nav>
+
+    <!-- 404 Content -->
+    <main class="error-page">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-text">Sorry, the page you're looking for doesn't exist or has been moved. Let us help you find what you need.</p>
+        <div class="error-links">
+            <a href="/" class="primary">Home</a>
+            <a href="/menu">Our Menu</a>
+            <a href="/private-parties">Private Parties</a>
+            <a href="/#contact">Contact Us</a>
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>
