@@ -313,6 +313,14 @@ h1.menu-hero-subtitle {
     line-height: 1.6;
 }
 
+.menu-section-serves {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-gold);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
 /* Chicken & Veal Price Header */
 .menu-price-header {
     display: flex;
