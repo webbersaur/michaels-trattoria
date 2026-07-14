@@ -35,7 +35,11 @@ There are no tests, linters, or build steps.
 **Theming via CSS custom properties** on `:root`: dark background (`#1a1a1a`), gold accents (`#c9a96e`), three font families (`--font-script`, `--font-heading`, `--font-body`), spacing scale, transition speeds.
 
 ### JavaScript (1 file)
-- `js/main.js` (~420 lines) — IIFE with: navbar scroll/mobile toggle, dropdown menus, lightbox gallery (keyboard-accessible, circular nav), IntersectionObserver fade-in animations, rate-your-experience modal (happy → review links, sad → Formspree feedback form), smooth scroll to anchors.
+- `js/main.js` (~490 lines) — IIFE with: navbar scroll/mobile toggle, dropdown menus, lightbox gallery (keyboard-accessible, circular nav), IntersectionObserver fade-in animations, rate-your-experience modal, the private-feedback form (posts JSON to `/api/contact`), smooth scroll to anchors.
+
+### Serverless
+- `api/contact.js` — Vercel serverless function (CommonJS, zero-dependency, uses global `fetch`) that emails the private-feedback form via **Resend** to `michaelstrattoria@att.net`, sending from `noreply@webbersaurus.com` (the shared Webbersaurus Resend account's already-verified domain, so no per-site DNS was needed — same `RESEND_API_KEY` as martins-website / pavement-protectors). Has a `company` honeypot. **Requires env var `RESEND_API_KEY`** — set in Vercel **Production** (encrypted). *Preview* env is NOT set: the CLI won't take it non-interactively; add it from the Vercel dashboard if branch previews ever need to send mail. `CONTACT_TO_EMAIL` / `CONTACT_FROM_EMAIL` are optional overrides with correct defaults in code.
+- This **replaced a dead Formspree endpoint** (`formspree.io/f/michaelstrattoria@att.net` — an email address where a form ID belongs, so it was almost certainly discarding every submission).
 
 ### Config & SEO Files
 - `vercel.json` — `cleanUrls: true` for extension-free URLs (Vercel auto-redirects `.html` → clean). 22 permanent 301 redirects from old WordPress directory URLs (e.g., `/dinner/` → `/dinner-menu`).
@@ -111,7 +115,8 @@ All sub-pages share this common structure:
   </div>
   ```
 - **Nav:** All sub-pages use `class="navbar scrolled"` (pre-scrolled state). Homepage nav scrolls dynamically at 50px threshold.
-- **Forms:** Formspree (`https://formspree.io/f/xdkogpyn`) for the feedback form in the rate modal.
+- **Forms:** the rate modal's private-feedback form posts JSON to `/api/contact` (Vercel function → Resend). No Formspree.
+- **Rate Us modal — NO REVIEW GATING (2026-07-14).** The modal used to fork on sentiment: a "Happy" button that showed the review links and a "Not Happy" button that diverted to a private form instead. **That is review gating, which Google has prohibited since 2018 and suspends Business Profiles over.** It was removed. `rateStep1` now shows the **review links (Google, TripAdvisor, Facebook, Yelp) to everyone**, with an opt-in `rateStepPrivate` ("Something wasn't right? Tell us privately instead") offered *alongside* them, never in place of them. **Do not reintroduce a sentiment fork.**
 - **Breadcrumbs:** All sub-pages have `<nav class="breadcrumb" aria-label="Breadcrumb">` inside the hero section. Menu sub-pages use 3-level breadcrumbs (Home → Menus → Page).
 - **FAQ accordion:** Uses native `<details>`/`<summary>` elements with CSS-only +/− toggle animation.
 - **Sitemap:** Update `<lastmod>` dates when modifying pages.

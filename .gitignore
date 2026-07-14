@@ -14,3 +14,4 @@ Thumbs.db
 
 # Reports
 work-report.html
+.env.local

@@ -338,26 +338,14 @@
             });
         }
 
-        if (rateBtnHappy) {
-            rateBtnHappy.addEventListener('click', function() {
-                showRateStep('rateStepHappy');
+        if (rateBtnPrivate) {
+            rateBtnPrivate.addEventListener('click', function() {
+                showRateStep('rateStepPrivate');
             });
         }
 
-        if (rateBtnSad) {
-            rateBtnSad.addEventListener('click', function() {
-                showRateStep('rateStepNotHappy');
-            });
-        }
-
-        if (rateBackHappy) {
-            rateBackHappy.addEventListener('click', function() {
-                showRateStep('rateStep1');
-            });
-        }
-
-        if (rateBackNotHappy) {
-            rateBackNotHappy.addEventListener('click', function() {
+        if (rateBackPrivate) {
+            rateBackPrivate.addEventListener('click', function() {
                 showRateStep('rateStep1');
             });
         }
@@ -373,13 +361,16 @@
     // =============================================
     // Rate Your Experience Modal
     // =============================================
+    // No sentiment gate: rateStep1 shows the review links (Google, TripAdvisor,
+    // Facebook, Yelp) to everyone, and rateStepPrivate is an opt-in alternative
+    // reachable from it - never a fork that withholds the Google link from unhappy
+    // customers. That is "review gating", which Google prohibits and suspends
+    // Business Profiles over. Do not re-add a Happy / Not Happy fork.
     const rateModal = document.getElementById('rateModal');
     const openRateModalBtn = document.getElementById('openRateModal');
     const rateModalClose = rateModal ? rateModal.querySelector('.rate-modal-close') : null;
-    const rateBtnHappy = document.getElementById('rateBtnHappy');
-    const rateBtnSad = document.getElementById('rateBtnSad');
-    const rateBackHappy = document.getElementById('rateBackHappy');
-    const rateBackNotHappy = document.getElementById('rateBackNotHappy');
+    const rateBtnPrivate = document.getElementById('rateBtnPrivate');
+    const rateBackPrivate = document.getElementById('rateBackPrivate');
     const rateSteps = rateModal ? rateModal.querySelectorAll('.rate-step') : [];
 
     function openRateModal() {
@@ -401,6 +392,81 @@
         });
     }
 
+    // Private feedback form -> /api/contact (Vercel function -> Resend).
+    // Replaces a dead Formspree endpoint that was silently dropping submissions.
+    const rateForm = rateModal ? rateModal.querySelector('.rate-form') : null;
+
+    function initRateForm() {
+        if (!rateForm) return;
+
+        const status = rateForm.querySelector('.rate-form-status');
+        const submitBtn = rateForm.querySelector('button[type="submit"]');
+
+        function setStatus(msg, type) {
+            if (!status) return;
+            status.textContent = msg;
+            status.style.color = type === 'error' ? '#e05260' : (type === 'success' ? '#4CAF50' : '');
+        }
+
+        rateForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nameInput = rateForm.querySelector('[name="name"]');
+            const msgInput = rateForm.querySelector('[name="message"]');
+            let ok = true;
+            [nameInput, msgInput].forEach(function(input) {
+                if (input && !input.value.trim()) {
+                    ok = false;
+                    input.style.borderColor = '#e05260';
+                } else if (input) {
+                    input.style.borderColor = '';
+                }
+            });
+            if (!ok) {
+                setStatus('Please add your name and a short message.', 'error');
+                return;
+            }
+
+            const payload = {};
+            new FormData(rateForm).forEach(function(value, key) { payload[key] = value; });
+
+            const originalText = submitBtn ? submitBtn.textContent : '';
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+            }
+            setStatus('Sending your feedback...', '');
+
+            fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+                .then(function(res) {
+                    return res.json()
+                        .catch(function() { return {}; })
+                        .then(function(data) { return { ok: res.ok, data: data }; });
+                })
+                .then(function(result) {
+                    if (result.ok) {
+                        setStatus('Thank you for telling us. We\'ll reach out and make it right.', 'success');
+                        rateForm.reset();
+                    } else {
+                        setStatus(result.data.error || 'Something went wrong. Please call us at (203) 269-5303.', 'error');
+                    }
+                })
+                .catch(function() {
+                    setStatus('Network error. Please call us at (203) 269-5303.', 'error');
+                })
+                .finally(function() {
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
+        });
+    }
+
     // =============================================
     // Initialization
     // =============================================
@@ -413,6 +479,7 @@
         // Initialize features
         initEventListeners();
         initScrollAnimations();
+        initRateForm();
 
         // Add smooth transition to lightbox image
         if (lightboxImage) {

@@ -1118,49 +1118,26 @@ address {
     display: none;
 }
 
-/* Happy / Not Happy Buttons */
-.rate-modal-buttons {
-    display: flex;
-    gap: var(--spacing-md);
-    justify-content: center;
-    flex-wrap: wrap;
+/* Opt-in private feedback link (offered alongside the review links, never instead) */
+.rate-modal-alt {
+    margin-top: var(--spacing-md);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
 }
 
-.rate-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    font-family: var(--font-body);
-    font-size: 1.1rem;
-    font-weight: 700;
+.rate-modal-alt-link {
+    background: none;
     border: none;
-    border-radius: 0;
+    padding: 0;
+    font: inherit;
+    color: var(--color-gold);
+    text-decoration: underline;
     cursor: pointer;
-    transition: all var(--transition-medium);
-    color: #fff;
-    min-width: 160px;
-    justify-content: center;
 }
 
-.rate-btn-happy {
-    background-color: #4CAF50;
-}
-
-.rate-btn-happy:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(76, 175, 80, 0.3);
-}
-
-.rate-btn-sad {
-    background-color: #8B1538;
-}
-
-.rate-btn-sad:hover {
-    background-color: #a01c44;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(139, 21, 56, 0.3);
+.rate-modal-alt-link:hover {
+    color: var(--color-gold-light);
 }
 
 /* Review Platform Links */
@@ -1237,6 +1214,13 @@ address {
 .rate-submit-btn {
     width: 100%;
     margin-top: var(--spacing-xs);
+}
+
+.rate-form-status {
+    margin: var(--spacing-sm) 0 0;
+    min-height: 1.2em;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 /* Back Button */
@@ -1425,15 +1409,6 @@ address {
         padding: var(--spacing-md);
     }
 
-    .rate-modal-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .rate-btn {
-        width: 100%;
-        max-width: 280px;
-    }
 
     .review-links {
         grid-template-columns: 1fr;
