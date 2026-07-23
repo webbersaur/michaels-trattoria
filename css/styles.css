@@ -1286,12 +1286,12 @@ address {
     }
 
     .logo-text {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .logo-subtext {
-        font-size: 0.7rem;
-        letter-spacing: 3px;
+        font-size: 0.62rem;
+        letter-spacing: 2.5px;
     }
 
     .nav-menu {
