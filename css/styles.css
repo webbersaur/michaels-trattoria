@@ -1282,7 +1282,16 @@ address {
     }
 
     .nav-logo {
-        padding: 1.5rem 0 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .logo-text {
+        font-size: 2rem;
+    }
+
+    .logo-subtext {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
     }
 
     .nav-menu {
