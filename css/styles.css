@@ -537,6 +537,22 @@ address {
     color: var(--color-gold);
 }
 
+.hero-phone {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--color-gold);
+    text-decoration: none;
+    margin-bottom: var(--spacing-md);
+    transition: color var(--transition-fast);
+}
+
+.hero-phone:hover {
+    color: var(--color-gold-light);
+}
+
 .hero-cta {
     display: flex;
     gap: var(--spacing-sm);
