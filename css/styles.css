@@ -1322,6 +1322,10 @@ address {
         display: none;
     }
 
+    .hero {
+        padding-top: var(--nav-height);
+    }
+
     .nav-dropdown {
         position: static;
         width: 100%;
