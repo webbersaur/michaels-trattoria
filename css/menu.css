@@ -690,3 +690,63 @@ details[open] .faq-question::after {
         grid-template-columns: 1fr;
     }
 }
+
+/* Private Party Menu */
+.party-menu {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(201, 169, 110, 0.2);
+}
+
+.party-menu .section-label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.party-menu-note {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.party-menu-courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.party-course {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(201, 169, 110, 0.2);
+    padding: var(--spacing-md);
+}
+
+.party-course h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+}
+
+.party-course-label {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.party-course ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.party-course li {
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.party-course li:last-child {
+    border-bottom: none;
+}
