@@ -23,6 +23,15 @@
         });
         setTimeout(loadGA, 5000);
       })();
+      // Send call/text taps to GA4 (marked as key events there)
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest && e.target.closest('a[href^="tel:"], a[href^="sms:"]');
+        if (!a) return;
+        var area = a.closest('header, footer');
+        gtag('event', a.href.indexOf('tel:') === 0 ? 'click_to_call' : 'click_to_text', {
+          link_location: area ? area.tagName.toLowerCase() : 'content'
+        });
+      });
     </script>
     <meta name="description" content="Michael's Trattoria menus - dinner, lunch, pizza, desserts, wine, and catering. Italian restaurant in Wallingford, CT. 344 Center Street. Call (203) 269-5303.">
     <title>Menus | Michael's Trattoria - Italian Restaurant Wallingford CT</title>
